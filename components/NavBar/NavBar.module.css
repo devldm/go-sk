@@ -1,0 +1,27 @@
+
+.navFlex{
+    display: flex;
+       max-width: 80%;
+        margin: auto;
+        align-items: center;
+        justify-content: space-between;
+}
+
+.linkFlex {
+    justify-self: flex-end;
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media(max-width: 768px){
+    .navFlex{
+        width: 100vw;
+    }
+    .linkFlex{
+        width: 40%;
+        justify-content: space-between;
+
+    }
+    
+}

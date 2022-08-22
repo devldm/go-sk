@@ -2,6 +2,12 @@
   padding: 0 2rem;
 }
 
+.imageBg{
+  background: no-repeat center url(../public/sseoul.jpg);
+  opacity: 0.6;
+  display: none;
+}
+
 .main {
   min-height: 100vh;
   padding: 4rem 0;
@@ -10,7 +16,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
+
+
 
 .footer {
   display: flex;
@@ -42,7 +51,7 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .title,
