@@ -2,11 +2,11 @@
   padding: 0 2rem;
 }
 
-.imageBg{
+/* .imageBg{
   background: no-repeat center url(../public/sseoul.jpg);
   opacity: 0.6;
   display: none;
-}
+} */
 
 .main {
   min-height: 100vh;
