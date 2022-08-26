@@ -1,0 +1,22 @@
+
+.jobPostContainer {
+    background-color: bisque;
+    border-radius: 10px;
+    width: 85%;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.headingFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.jobTitle {
+    margin: 0;
+}
+
+.jobLocation {
+    margin: 0;
+}

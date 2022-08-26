@@ -1,0 +1,4 @@
+.jobUploadForm {
+    display: flex;
+    flex-direction: column;
+}

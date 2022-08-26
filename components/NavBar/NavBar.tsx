@@ -9,7 +9,7 @@ const NavBar: NextComponentType = () => {
       <h2>GO-SK</h2>
     </div>
     <div className={styles.linkFlex}>
-      <Link href="/">
+      <Link href="/jobs">
         <a>Jobs</a>
       </Link>
       <Link href="/about">
