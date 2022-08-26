@@ -41,8 +41,8 @@ const Jobs: NextPage<JobPostings> = ({ jobs }: InferGetStaticPropsType<typeof ge
         </h1>
         {jobs && <>
           {jobs.map((job: any) => (
-            <JobPost jobProps={job} />
-          ))}
+            <JobPost jobProps={job} key={job.job_id} />
+          ))} 
         </>}
       </main>
       <footer className={styles.footer}>
