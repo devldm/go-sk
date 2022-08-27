@@ -6,8 +6,8 @@ import prisma from '../db';
 import JobPost from '../components/JobPost/JobPost'
 
 export async function getStaticProps() {
-  const jobs: Job[] = await prisma!.go_sk_jobs.findMany()
-
+  const jobs: Job[] = await prisma.go_sk_jobs.findMany()
+  
   return {
     props: { jobs }
   };
