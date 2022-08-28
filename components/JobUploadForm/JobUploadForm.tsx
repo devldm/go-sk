@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styles from './JobUploadForm.module.css'
 
-
 type Job = {
     job_id: string,
     job_title: string,
@@ -23,10 +22,22 @@ export default function JobUploadForm() {
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
+
         const data: Job = {
-            ...formState,
-            job_id: self.crypto.randomUUID()
+            job_id: self.crypto.randomUUID(),
+            job_description: formState.job_description,
+            job_title: formState.job_title,
+            location: formState.location,
+            company_name: formState.company_name
         }
+
+        const response = await fetch("/api/jobs", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
     }
 
     return (
@@ -41,17 +52,17 @@ export default function JobUploadForm() {
                 <input type="text" id="companyName" name="companyName" onChange={(e) => setFormState({
                     ...formState,
                     company_name: e.target.value
-                })}/>
+                })} />
                 <label htmlFor="location">Location:</label>
                 <input required type="text" id="location" name="location" onChange={(e) => setFormState({
                     ...formState,
                     location: e.target.value
-                })}/>
+                })} />
                 <label htmlFor="jobDescription">Job description:</label>
                 <input required type="text" id="jobDescription" name="jobDescription" onChange={(e) => setFormState({
                     ...formState,
                     job_description: e.target.value
-                })}/>
+                })} />
                 <br />
                 <button type="submit">Submit</button>
             </form>
