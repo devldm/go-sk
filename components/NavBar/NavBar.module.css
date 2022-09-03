@@ -1,27 +1,25 @@
-
-.navFlex{
+.navFlex {
     display: flex;
-       max-width: 80%;
-        margin: auto;
-        align-items: center;
-        justify-content: space-between;
+    max-width: 80%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .linkFlex {
-    justify-self: flex-end;
-    width: 15%;
     display: flex;
-    justify-content: space-around;
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-@media(max-width: 768px){
-    .navFlex{
+@media(max-width: 768px) {
+    .navFlex {
         width: 100vw;
     }
-    .linkFlex{
-        width: 40%;
-        justify-content: space-between;
 
+    .linkFlex {
+        justify-content: flex-end;
     }
-    
+
 }

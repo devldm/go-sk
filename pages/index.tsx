@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import NavBar from '../components/NavBar/NavBar'
+import HeroHome from '../components/HeroHome/HeroHome'
 
 const Home: NextPage = () => {
   return (
@@ -13,13 +14,7 @@ const Home: NextPage = () => {
       </Head>
       <NavBar />
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Start your journey to<br/>
-          South Korea
-        </h1>
-
-        <p className={styles.description}>
-        Find your dream role in South Korea        </p>
+        <HeroHome />
       </main>
       <footer className={styles.footer}>
         <a
