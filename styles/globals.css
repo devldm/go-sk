@@ -20,7 +20,7 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
+    color: #f0f6fc;
     background: black;
   }
 }
@@ -30,7 +30,7 @@ a {
     color-scheme: light;
   }
   body {
-    color: black;
+    color: #222;
     background: white;
   }
 }

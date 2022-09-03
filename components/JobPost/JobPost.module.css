@@ -5,6 +5,7 @@
     width: 85%;
     margin-bottom: 5px;
     padding: 10px;
+    border: 1px solid #30363d;
 }
 
 .headingFlex {
@@ -20,3 +21,17 @@
 .jobLocation {
     margin: 0;
 }
+
+@media (prefers-color-scheme: dark) {
+    .jobPostContainer {
+      color: #f0f6fc;
+      background: #222;
+    }
+  }
+  
+  @media (prefers-color-scheme: light) {
+    .jobPostContainer {
+      color: #222;
+      background: gainsboro;
+    }
+  }
