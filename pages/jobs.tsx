@@ -1,6 +1,6 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Jobs.module.css'
 import NavBar from '../components/NavBar/NavBar'
 import prisma from '../db';
 import JobPost from '../components/JobPost/JobPost'
@@ -36,6 +36,7 @@ const Jobs: NextPage<JobPostings> = ({ jobs }: InferGetStaticPropsType<typeof ge
       </Head>
       <NavBar />
       <main className={styles.main}>
+        <div className={styles.jobContent}>
         <h1 className={styles.title}>
           Jobs
         </h1>
@@ -44,6 +45,7 @@ const Jobs: NextPage<JobPostings> = ({ jobs }: InferGetStaticPropsType<typeof ge
             <JobPost jobProps={job} key={job.job_id} />
           ))}
         </>}
+        </div>
       </main>
       <footer className={styles.footer}>
         <a

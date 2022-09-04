@@ -18,9 +18,39 @@
     margin: 0;
 }
 
+.companyName {
+  text-align: end;
+}
+
 .jobLocation {
     margin: 0;
+    color: #c4bebe;
+    font-style: italic;
 }
+
+@media (max-width: 900px) {
+  .jobPostContainer {
+    width: 100%;
+}
+
+.titleLocation {
+  width: 80%;
+}
+
+.jobDescription {
+  margin: 5px 0px;
+}
+
+.companyName {
+  width: 40%;
+}
+
+.jobTitle {
+  font-size: 20px;
+}
+
+}
+
 
 @media (prefers-color-scheme: dark) {
     .jobPostContainer {
