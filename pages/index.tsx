@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import NavBar from '../components/NavBar/NavBar'
 import HeroHome from '../components/HeroHome/HeroHome'
+import Footer from '../components/Footer/Footer'
 
 const Home: NextPage = () => {
   return (
@@ -10,21 +11,13 @@ const Home: NextPage = () => {
       <Head>
         <title>GO-SK</title>
         <meta name="description" content="South Korea Jobs" />
-        <link rel="icon" type="image/svg+xml" href="/sk.svg" sizes="any"/>
+        <link rel="icon" type="image/svg+xml" href="/sk.svg" sizes="any" />
       </Head>
       <NavBar />
       <main className={styles.main}>
         <HeroHome />
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by Mingo
-        </a>
-      </footer>
+      <Footer />
     </div>
   )
 }
@@ -32,7 +25,7 @@ const Home: NextPage = () => {
 export default Home
 
 
- {/* <div className={styles.grid}>
+{/* <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
           </a>

@@ -24,6 +24,7 @@
 @media (max-width: 600px) {
   .container {
     width: 100vw;
+    padding: 0 1rem;
   }
 }
 

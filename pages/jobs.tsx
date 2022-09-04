@@ -4,6 +4,7 @@ import styles from '../styles/Jobs.module.css'
 import NavBar from '../components/NavBar/NavBar'
 import prisma from '../db';
 import JobPost from '../components/JobPost/JobPost'
+import Footer from '../components/Footer/Footer';
 
 export async function getStaticProps() {
   const jobs: Job[] = await prisma.go_sk_jobs.findMany()
@@ -37,25 +38,17 @@ const Jobs: NextPage<JobPostings> = ({ jobs }: InferGetStaticPropsType<typeof ge
       <NavBar />
       <main className={styles.main}>
         <div className={styles.jobContent}>
-        <h1 className={styles.title}>
-          Jobs
-        </h1>
-        {jobs && <>
-          {jobs.map((job: any) => (
-            <JobPost jobProps={job} key={job.job_id} />
-          ))}
-        </>}
+          <h1 className={styles.title}>
+            Jobs
+          </h1>
+          {jobs && <>
+            {jobs.map((job: any) => (
+              <JobPost jobProps={job} key={job.job_id} />
+            ))}
+          </>}
         </div>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by Mingo
-        </a>
-      </footer>
+      <Footer />
     </div>
   )
 }
