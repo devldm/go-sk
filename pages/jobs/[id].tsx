@@ -60,10 +60,11 @@ const Job: NextPage<JobPosting> = ({ job }: InferGetStaticPropsType<typeof getSt
             <NavBar />
             <main className={styles.main}>
                 <div className={styles.jobContent}>
-                <h1>{job.job_title}</h1>
-                <p>{job.location}</p>
-                <p>{job.company_name}</p>
-                <p>{job.job_description}</p>
+                <h1 className={styles.title}>{job.job_title}</h1>
+                <p className={styles.location}>{job.location}</p>
+                <p className={styles.companyName}>{job.company_name}</p>
+                <hr />
+                <p className={styles.description}>{job.job_description}</p>
                 </div>
             </main>
             <Footer />

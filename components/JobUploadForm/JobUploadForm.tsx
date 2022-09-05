@@ -59,7 +59,7 @@ export default function JobUploadForm() {
                     location: e.target.value
                 })} />
                 <label htmlFor="jobDescription">Job description:</label>
-                <input required type="text" id="jobDescription" name="jobDescription" onChange={(e) => setFormState({
+                <textarea required id="jobDescription" name="jobDescription" onChange={(e) => setFormState({
                     ...formState,
                     job_description: e.target.value
                 })} />

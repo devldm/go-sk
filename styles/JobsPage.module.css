@@ -1,3 +1,20 @@
+.title {
+  margin: 0
+}
+
+.location {
+  margin: 0;
+  font-style: italic;
+}
+
+.description {
+
+}
+
+.companyName {
+  margin-bottom: 0;
+}
+
 .container {
   padding: 0 2rem;
 }
@@ -23,4 +40,11 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100vw;
+    padding: 0 2rem;
+  }
 }
