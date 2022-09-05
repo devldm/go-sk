@@ -1,4 +1,4 @@
-import styles from './JobPost.module.css';
+import styles from './JobPreview.module.css';
 
 
 type Job = {
@@ -13,7 +13,7 @@ interface Props {
     jobProps?: Job
 }
 
-export default function JobPost({ jobProps }: Props) {
+export default function JobPreview({ jobProps }: Props) {
     return (
         <div className={styles.jobPostContainer}>
             <div className={styles.headingFlex}>

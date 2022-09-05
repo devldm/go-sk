@@ -3,8 +3,9 @@ import Head from 'next/head'
 import styles from '../styles/Jobs.module.css'
 import NavBar from '../components/NavBar/NavBar'
 import prisma from '../db';
-import JobPost from '../components/JobPost/JobPost'
+import JobPreview from '../components/JobPreview/JobPreview'
 import Footer from '../components/Footer/Footer';
+import Link from 'next/link';
 
 export async function getStaticProps() {
   const jobs: Job[] = await prisma.go_sk_jobs.findMany()
@@ -41,11 +42,18 @@ const Jobs: NextPage<JobPostings> = ({ jobs }: InferGetStaticPropsType<typeof ge
           <h1 className={styles.title}>
             Jobs
           </h1>
+          <div className={styles.jobs}>
           {jobs && <>
             {jobs.map((job: any) => (
-              <JobPost jobProps={job} key={job.job_id} />
+              <Link href={`jobs/${job.job_id}`} key={job.job_id} passHref>
+              <a>
+              <JobPreview jobProps={job} key={job.job_id} />
+              </a>
+              </Link>
             ))}
+            
           </>}
+          </div>
         </div>
       </main>
       <Footer />

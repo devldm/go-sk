@@ -2,7 +2,6 @@
 .jobPostContainer {
     background-color: bisque;
     border-radius: 10px;
-    width: 85%;
     margin-bottom: 8px;
     padding: 10px;
     border: 1px solid #30363d;
@@ -16,6 +15,7 @@
 
 .jobTitle {
     margin: 0;
+    width: max-content;
 }
 
 .companyName {
@@ -24,7 +24,6 @@
 
 .jobLocation {
     margin: 0;
-    color: #c4bebe;
     font-style: italic;
 }
 
@@ -57,6 +56,10 @@
       color: #f0f6fc;
       background: #222;
     }
+
+    .jobLocation {
+      color: #c4bebe;
+    }
   }
   
   @media (prefers-color-scheme: light) {
@@ -64,4 +67,6 @@
       color: #222;
       background: gainsboro;
     }
+
+
   }
