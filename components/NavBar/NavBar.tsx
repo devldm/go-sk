@@ -1,6 +1,6 @@
-import type { NextComponentType, NextPage } from 'next'
-import styles from './NavBar.module.css'
-import Link from 'next/link'
+import type { NextComponentType, NextPage } from "next";
+import styles from "./NavBar.module.css";
+import Link from "next/link";
 
 const NavBar: NextComponentType = () => {
   return (
@@ -16,7 +16,7 @@ const NavBar: NextComponentType = () => {
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

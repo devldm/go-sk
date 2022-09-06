@@ -1,79 +1,74 @@
-.heroHomeContainer { 
-    display: grid;
-    height: 100%;
-    grid-template-columns: 1.5fr 1.5fr;
-    grid-template-rows: 2.6fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      ". .";
-  }
-  
+.heroHomeContainer {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1.5fr 1.5fr;
+  grid-template-rows: 2.6fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: ". .";
+}
+
 .landingImage {
-    max-width: 90%;
-    max-height: 80%;
+  max-width: 90%;
+  max-height: 80%;
 }
 
 .heroImage {
-    object-fit: cover;
-    height: min-content;
+  object-fit: cover;
+  height: min-content;
 }
 
 .heroText,
 .heroImage {
-    display: flex;
-    justify-content: center;
-    padding: 0px 50px;
-    padding: 1rem 3rem; 
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 0px 50px;
+  padding: 1rem 3rem;
+  align-items: center;
 }
 
 .heroText {
-    margin: 0 auto;
-    flex-direction: column;
-    align-items: flex-start;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .title {
-    margin: 0;
-    line-height: 1.15;
-    font-size: 3.5rem;
-    text-align: left;
+  margin: 0;
+  line-height: 1.15;
+  font-size: 3.5rem;
+  text-align: left;
 }
 
 .description {
-    margin: 4rem 0;
-    line-height: 1.5;
-    font-size: 1.5rem;
-    text-align: left;
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  text-align: left;
 }
 
-
 @media (max-width: 900px) {
-    .heroHomeContainer { 
-        grid-template-columns: 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          ".";
-        max-width: 100%;
-      }
+  .heroHomeContainer {
+    grid-template-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: ".";
+    max-width: 100%;
+  }
 
-      .heroText {
-        padding-top: 100px;
-      }
+  .heroText {
+    padding-top: 100px;
+  }
 
-    .heroText,
-    .heroImage {
-     width: 100%;
-     height: 100%;
-    } 
+  .heroText,
+  .heroImage {
+    width: 100%;
+    height: 100%;
+  }
 
-    .heroImage img {
-        padding: 0;
-        object-fit: cover;
-        height: 100%;
-
-    }
-
+  .heroImage img {
+    padding: 0;
+    object-fit: cover;
+    height: 100%;
+  }
 }

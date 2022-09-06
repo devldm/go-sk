@@ -1,21 +1,20 @@
-
 .jobPostContainer {
-    background-color: bisque;
-    border-radius: 10px;
-    margin-bottom: 8px;
-    padding: 10px;
-    border: 1px solid #30363d;
+  background-color: bisque;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  padding: 10px;
+  border: 1px solid #30363d;
 }
 
 .headingFlex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .jobTitle {
-    margin: 0;
-    width: max-content;
+  margin: 0;
+  width: max-content;
 }
 
 .companyName {
@@ -23,50 +22,46 @@
 }
 
 .jobLocation {
-    margin: 0;
-    font-style: italic;
+  margin: 0;
+  font-style: italic;
 }
 
 @media (max-width: 900px) {
   .jobPostContainer {
     width: 100%;
-}
+  }
 
-.titleLocation {
-  width: 80%;
-}
+  .titleLocation {
+    width: 80%;
+  }
 
-.jobDescription {
-  margin: 5px 0px;
-}
+  .jobDescription {
+    margin: 5px 0px;
+  }
 
-.companyName {
-  width: 40%;
-}
+  .companyName {
+    width: 40%;
+  }
 
-.jobTitle {
-  font-size: 20px;
+  .jobTitle {
+    font-size: 20px;
+  }
 }
-
-}
-
 
 @media (prefers-color-scheme: dark) {
-    .jobPostContainer {
-      color: #f0f6fc;
-      background: #222;
-    }
-
-    .jobLocation {
-      color: #c4bebe;
-    }
+  .jobPostContainer {
+    color: #f0f6fc;
+    background: #222;
   }
-  
-  @media (prefers-color-scheme: light) {
-    .jobPostContainer {
-      color: #222;
-      background: gainsboro;
-    }
 
-
+  .jobLocation {
+    color: #c4bebe;
   }
+}
+
+@media (prefers-color-scheme: light) {
+  .jobPostContainer {
+    color: #222;
+    background: gainsboro;
+  }
+}
