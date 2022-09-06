@@ -4,6 +4,7 @@ import styles from "../../styles/JobsPage.module.css";
 import NavBar from "../../components/NavBar/NavBar";
 import prisma from "../../db";
 import Footer from "../../components/Footer/Footer";
+import StickyApply from "../../components/StickyApply/StickyApply";
 
 export async function getStaticProps({ params }: any) {
   const job: any = await prisma.go_sk_jobs.findUnique({
@@ -63,7 +64,10 @@ const Job: NextPage<JobPosting> = ({
         <div className={styles.jobContent}>
           <h1 className={styles.title}>{job.job_title}</h1>
           <p className={styles.location}>{job.location}</p>
-          <p className={styles.companyName}>{job.company_name}</p>
+          <div className={styles.nameAndButton}>
+          <p className={styles.companyName}>{job.company_name}</p> 
+          <StickyApply /> 
+          </div>
           <hr />
           <p className={styles.description}>{job.job_description}</p>
         </div>

@@ -14,6 +14,10 @@
   margin-bottom: 0;
 }
 
+.nameAndButton {
+  display: flex;
+}
+
 .container {
   padding: 0 2rem;
 }
@@ -39,11 +43,30 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  width: 50%;
+  margin: 0 auto;
 }
+
+@media (max-width: 900px) {
+  .container {
+    width: 100vw;
+    padding: 0 2rem;
+  }
+
+  .jobContent {
+    width: 80%;
+  }
+}
+
 
 @media (max-width: 600px) {
   .container {
     width: 100vw;
     padding: 0 2rem;
   }
+
+  .jobContent {
+    width: 100%;
+  }
 }
+
