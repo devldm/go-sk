@@ -71,7 +71,9 @@ const Job: NextPage<JobPosting> = ({
           </div>
           <hr />
           {/* <p className={styles.description}>{job.job_description}</p> */}
-          <ReactMarkdown children={job.job_description} className={styles.description} />
+          <ReactMarkdown className={styles.description} >
+              {job.job_description}
+            </ ReactMarkdown >
         </div>
       </main>
       <Footer />
