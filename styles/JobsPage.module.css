@@ -2,6 +2,12 @@
   margin: 0;
 }
 
+.description > pre {
+  display: flex;
+  width: 100%;
+  white-space: break-spaces;
+}
+
 .location {
   margin: 0;
   font-style: italic;
