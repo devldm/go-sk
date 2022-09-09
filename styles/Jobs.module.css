@@ -28,15 +28,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .title {
   text-align: center;
 }
 
+@media (max-width: 900px) {
+  .container {
+    width: 100vw;
+    padding: 0 2rem;
+  }
+
+  .jobContent {
+    width: 80%;
+  }
+}
+
 @media (max-width: 600px) {
   .container {
     width: 100vw;
     padding: 0 1rem;
+  }
+
+  .jobContent {
+    width: 100%;
   }
 }
