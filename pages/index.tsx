@@ -13,8 +13,8 @@ const Home: NextPage = () => {
         <meta name="description" content="South Korea Jobs" />
         <link rel="icon" type="image/svg+xml" href="/sk.svg" sizes="any" />
       </Head>
-      <NavBar />
       <main className={styles.main}>
+      <NavBar />
         <HeroHome />
       </main>
       <Footer />

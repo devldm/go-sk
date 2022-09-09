@@ -5,6 +5,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import prisma from "../../db";
 import Footer from "../../components/Footer/Footer";
 import StickyApply from "../../components/StickyApply/StickyApply";
+import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps({ params }: any) {
   const job: any = await prisma.go_sk_jobs.findUnique({
@@ -69,7 +70,8 @@ const Job: NextPage<JobPosting> = ({
           <StickyApply /> 
           </div>
           <hr />
-          <p className={styles.description}>{job.job_description}</p>
+          {/* <p className={styles.description}>{job.job_description}</p> */}
+          <ReactMarkdown children={job.job_description} className={styles.description} />
         </div>
       </main>
       <Footer />

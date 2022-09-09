@@ -1,9 +1,9 @@
 .navFlex {
   display: flex;
-  max-width: 80%;
   margin: auto;
   align-items: center;
   justify-content: space-between;
+  width: 80%;
 }
 
 .linkFlex {
@@ -20,5 +20,18 @@
 
   .linkFlex {
     justify-content: flex-end;
+  }
+}
+
+@media (max-width: 900px) {
+  .navFlex {
+    width: 80%;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .navFlex {
+    width: 100%;
   }
 }
