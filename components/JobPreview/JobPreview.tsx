@@ -22,8 +22,8 @@ export default function JobPreview({ jobProps }: Props) {
         </div>
         <div className={styles.companyName}>{jobProps?.company_name}</div>
       </div>
-      <hr className="solid" />
-      <p className={styles.jobDescription}>{jobProps?.job_description}</p>
+      {/* <hr className="solid" /> */}
+      {/* <p className={styles.jobDescription}>{jobProps?.job_description}</p> */}
     </div>
   );
 }

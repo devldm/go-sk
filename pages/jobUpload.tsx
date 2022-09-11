@@ -5,8 +5,8 @@ import NavBar from "../components/NavBar/NavBar";
 import JobUploadForm from "../components/JobUploadForm/JobUploadForm";
 import Footer from "../components/Footer/Footer";
 
-
 const JobUpload: NextPage = () => {
+  
   return (
     <div className={styles.container}>
       <Head>

@@ -5,7 +5,7 @@
 .jobs {
   display: flex;
   flex-direction: column;
-  width: initial;
+  width: 60%;
 }
 
 .footer {
@@ -30,6 +30,7 @@
   align-items: center;
   width: 60%;
   margin: 0 auto;
+  height: 100vh;
 }
 
 .title {
@@ -43,6 +44,10 @@
   }
 
   .jobContent {
+    width: 90%;
+  }
+
+  .jobs {
     width: 80%;
   }
 }
@@ -54,6 +59,10 @@
   }
 
   .jobContent {
+    width: 100%;
+  }
+
+  .jobs {
     width: 100%;
   }
 }

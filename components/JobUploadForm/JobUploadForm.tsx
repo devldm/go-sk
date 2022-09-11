@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import styles from "./JobUploadForm.module.css";
+import dynamic from 'next/dynamic';
+const ReactQuill = dynamic(() => import("react-quill"), {ssr: false})
+import "react-quill/dist/quill.snow.css";
+import DOMPurify from 'dompurify';
+
 
 type Job = {
   job_id: string;
@@ -19,13 +24,14 @@ export default function JobUploadForm() {
   };
 
   const [formState, setFormState] = useState(defaultJobForm);
+  const [value, setValue] = useState("");
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     const data: Job = {
       job_id: self.crypto.randomUUID(),
-      job_description: formState.job_description,
+      job_description: DOMPurify.sanitize(formState.job_description),
       job_title: formState.job_title,
       location: formState.location,
       company_name: formState.company_name,
@@ -82,7 +88,7 @@ export default function JobUploadForm() {
           }
         />
         <label htmlFor="jobDescription">Job description:</label>
-        <textarea
+        {/* <textarea
           required
           id="jobDescription"
           name="jobDescription"
@@ -92,7 +98,13 @@ export default function JobUploadForm() {
               job_description: e.target.value,
             })
           }
-        />
+        /> */}
+        <ReactQuill theme="snow"  onChange={(e) =>
+            setFormState({
+              ...formState,
+              job_description: e,
+            })
+          }/>
         <br />
         <button type="submit">Submit</button>
       </form>
