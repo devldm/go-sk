@@ -37,6 +37,21 @@
   text-align: center;
 }
 
+@media (max-width: 1400px) {
+  .container {
+    width: 100vw;
+    padding: 0 2rem;
+  }
+
+  .jobContent {
+    width: 90%;
+  }
+
+  .jobs {
+    width: 80%;
+  }
+}
+
 @media (max-width: 900px) {
   .container {
     width: 100vw;
