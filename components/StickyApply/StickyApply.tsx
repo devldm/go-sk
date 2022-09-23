@@ -6,7 +6,7 @@ interface Props {
 
 export default function StickyApply({ applyUrl }: Props) {
   return (
-    <a target="_blank" href={applyUrl}>
+    <a target="_blank"  rel="noreferrer" href={applyUrl}>
       <button className={styles.button}>Apply</button>
     </a>
   );
