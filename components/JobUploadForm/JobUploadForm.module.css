@@ -1,4 +1,30 @@
 .jobUploadForm {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+}
+
+.jobUploadForm input {
+  margin-bottom: 20px;
+}
+
+.submit {
+  margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+  .jobUploadForm {
+  }
+}
+
+@media (max-width: 768px) {
+  .jobUploadForm {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .jobUploadForm {
+    width: 100%;
+  }
 }

@@ -1,11 +1,13 @@
-import type { NextComponentType, NextPage } from "next";
 import styles from "./NavBar.module.css";
 import Link from "next/link";
+import skFlag from "../../public/sk.svg";
+import Image from "next/image";
 
-const NavBar: NextComponentType = () => {
+export default function NavBar() {
   return (
     <div className={styles.navFlex}>
-      <div>
+      <div className={styles.logo}>
+        <Image src={skFlag} />
         <Link href="/">
           <h2>GO-SK</h2>
         </Link>
@@ -17,6 +19,4 @@ const NavBar: NextComponentType = () => {
       </div>
     </div>
   );
-};
-
-export default NavBar;
+}

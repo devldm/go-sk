@@ -1,4 +1,4 @@
-import { go_sk_jobs } from "@prisma/client";
+import { jobs } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../db";
 
@@ -11,13 +11,15 @@ export default async function handler(
   }
 
   try {
-    const postData: go_sk_jobs = await prisma.go_sk_jobs.create({
+    const postData: jobs = await prisma.jobs.create({
       data: {
-        job_id: req.body.job_id,
-        job_description: req.body.job_description,
-        job_title: req.body.job_title,
-        company_name: req.body.company_name,
-        location: req.body.location,
+        jobid: req.body.jobid,
+        jobdescription: req.body.jobdescription,
+        jobtitle: req.body.jobtitle,
+        companyname: req.body.companyname,
+        joblocation: req.body.joblocation,
+        applyurl: req.body.applyurl,
+        linkedinurl: req.body.linkedinurl,
       },
     });
   } catch (err) {

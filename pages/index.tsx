@@ -14,10 +14,10 @@ const Home: NextPage = () => {
         <link rel="icon" type="image/svg+xml" href="/sk.svg" sizes="any" />
       </Head>
       <main className={styles.main}>
-      <NavBar />
+        <NavBar />
         <HeroHome />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

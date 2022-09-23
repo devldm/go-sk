@@ -1,15 +1,14 @@
 import type { InferGetStaticPropsType, NextPage } from "next";
-import Head from "next/head";
 import styles from "../../styles/JobsPage.module.css";
-import NavBar from "../../components/NavBar/NavBar";
 import prisma from "../../db";
-import Footer from "../../components/Footer/Footer";
 import StickyApply from "../../components/StickyApply/StickyApply";
+import Layout from "../../components/Layout/Layout";
+import Link from "next/link";
 
 export async function getStaticProps({ params }: any) {
-  const job: any = await prisma.go_sk_jobs.findUnique({
+  const job: any = await prisma.jobs.findUnique({
     where: {
-      job_id: params.id,
+      jobid: params.id,
     },
   });
 
@@ -19,13 +18,13 @@ export async function getStaticProps({ params }: any) {
 }
 
 export async function getStaticPaths() {
-  const jobIdsObject: JobId[] = await prisma.go_sk_jobs.findMany({
+  const jobIdsObject: JobId[] = await prisma.jobs.findMany({
     select: {
-      job_id: true,
+      jobid: true,
     },
   });
 
-  const jobIds = jobIdsObject.map((id) => `/jobs/${id.job_id}`);
+  const jobIds = jobIdsObject.map((id) => `/jobs/${id.jobid}`);
 
   return {
     paths: jobIds,
@@ -33,47 +32,40 @@ export async function getStaticPaths() {
   };
 }
 
-type Job = {
-  job_id: string;
-  job_title: string;
-  company_name: string;
-  location: string;
-  job_description: string;
-};
-
 type JobId = {
-  job_id: string;
+  jobid: string;
 };
 
 type JobPosting = {
-  job: Job;
+  job: typeof Job;
 };
 
 const Job: NextPage<JobPosting> = ({
   job,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>GO-SK - Jobs</title>
-        <meta name="description" content="South Korea Jobs" />
-        <link rel="icon" type="image/svg+xml" href="/sk.svg" sizes="any" />
-      </Head>
-      <NavBar />
-      <main className={styles.main}>
-        <div className={styles.jobContent}>
-          <h1 className={styles.title}>{job.job_title}</h1>
-          <p className={styles.location}>{job.location}</p>
-          <div className={styles.nameAndButton}>
-          <p className={styles.companyName}>{job.company_name}</p> 
-          <StickyApply /> 
-          </div>
-          <hr />
-         <div dangerouslySetInnerHTML={{ __html: job.job_description }} />
-        </div>
-      </main>
-      <Footer />
-    </div>
+    <Layout pageTitle={"Job details"}>
+      <h1 className={styles.title}>{job.jobtitle}</h1>
+      <p className={styles.location}>{job.location}</p>
+      <div className={styles.nameAndButton}>
+        <p className={styles.companyName}>{job.companyname}</p>
+        <StickyApply applyUrl={job.applyurl} />
+      </div>
+      <hr />
+      <div dangerouslySetInnerHTML={{ __html: job.jobdescription }} />
+      <Link href="/jobs">
+        <p
+          style={{
+            color: "hsl(205, 100%, 52%)",
+            fontWeight: "bold",
+            textAlign: "right",
+            fontSize: "20px",
+          }}
+        >
+          Go back to Jobs
+        </p>
+      </Link>
+    </Layout>
   );
 };
 

@@ -4,15 +4,15 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:2ZGsZ4SQM1M7kHJasVHM@containers-us-west-35.railway.app:6469/railway"
+  url      = env("DATABASE_URL")
 }
 
-model go_sk_jobs {
-  job_id          String @id @db.Uuid
-  job_title       String
-  company_name    String
-  location        String
-  job_description String
-
-  @@map("go-sk-jobs")
+model jobs {
+  jobid          String  @id @db.Uuid
+  jobtitle       String? @db.VarChar(255)
+  joblocation    String? @db.VarChar(255)
+  jobdescription String?
+  companyname    String? @db.VarChar(255)
+  linkedinurl    String? @db.VarChar(255)
+  applyurl       String? @db.VarChar(255)
 }

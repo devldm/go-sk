@@ -1,31 +1,19 @@
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import type { InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Jobs.module.css";
 import NavBar from "../components/NavBar/NavBar";
 import prisma from "../db";
 import JobPreview from "../components/JobPreview/JobPreview";
-import Footer from "../components/Footer/Footer";
 import Link from "next/link";
+import { Job, JobPostings } from "../types";
 
 export async function getStaticProps() {
-  const jobs: Job[] = await prisma.go_sk_jobs.findMany();
+  const jobs: Job[] = await prisma.jobs.findMany();
 
   return {
     props: { jobs },
   };
 }
-
-type Job = {
-  job_id: string;
-  job_title: string;
-  company_name: string;
-  location: string;
-  job_description: string;
-};
-
-type JobPostings = {
-  jobs: Job[];
-};
 
 const Jobs: NextPage<JobPostings> = ({
   jobs,
@@ -45,9 +33,9 @@ const Jobs: NextPage<JobPostings> = ({
             {jobs && (
               <>
                 {jobs.map((job: any) => (
-                  <Link href={`jobs/${job.job_id}`} key={job.job_id} passHref>
+                  <Link href={`jobs/${job.jobid}`} key={job.jobid} passHref>
                     <a>
-                      <JobPreview jobProps={job} key={job.job_id} />
+                      <JobPreview jobProps={job} key={job.jobid} />
                     </a>
                   </Link>
                 ))}
@@ -56,7 +44,7 @@ const Jobs: NextPage<JobPostings> = ({
           </div>
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

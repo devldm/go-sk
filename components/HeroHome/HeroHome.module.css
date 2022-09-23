@@ -1,6 +1,5 @@
 .heroHomeContainer {
   display: grid;
-  height: 100%;
   grid-template-columns: 1.5fr 1.5fr;
   grid-template-rows: 2.6fr;
   gap: 0px 0px;
@@ -9,8 +8,7 @@
 }
 
 .landingImage {
-  max-width: 90%;
-  max-height: 80%;
+  object-fit: contain;
 }
 
 .heroImage {
@@ -71,4 +69,13 @@
     object-fit: cover;
     height: 100%;
   }
+}
+
+@media (max-width: 768px) {
+  .landingImage {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
 }
