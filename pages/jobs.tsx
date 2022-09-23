@@ -6,13 +6,20 @@ import prisma from "../db";
 import JobPreview from "../components/JobPreview/JobPreview";
 import Link from "next/link";
 import { Job, JobPostings } from "../types";
+import { jobs } from "../mockData";
 
 export async function getStaticProps() {
-  const jobs: Job[] = await prisma.jobs.findMany();
+  try {
+    const jobs: Job[] = await prisma.jobs.findMany();
 
-  return {
-    props: { jobs },
-  };
+    return {
+      props: { jobs },
+    };
+  } catch {
+    return {
+      props: { jobs },
+    };
+  }
 }
 
 const Jobs: NextPage<JobPostings> = ({

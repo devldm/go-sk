@@ -4,32 +4,46 @@ import prisma from "../../db";
 import StickyApply from "../../components/StickyApply/StickyApply";
 import Layout from "../../components/Layout/Layout";
 import Link from "next/link";
+import { job } from "../../mockData";
 
 export async function getStaticProps({ params }: any) {
-  const job: any = await prisma.jobs.findUnique({
-    where: {
-      jobid: params.id,
-    },
-  });
+  try {
+    const job: any = await prisma.jobs.findUnique({
+      where: {
+        jobid: params.id,
+      },
+    });
 
-  return {
-    props: { job },
-  };
+    return {
+      props: { job },
+    };
+  } catch {
+    return {
+      props: { job },
+    };
+  }
 }
 
 export async function getStaticPaths() {
-  const jobIdsObject: JobId[] = await prisma.jobs.findMany({
-    select: {
-      jobid: true,
-    },
-  });
+  try {
+    const jobIdsObject: JobId[] = await prisma.jobs.findMany({
+      select: {
+        jobid: true,
+      },
+    });
 
-  const jobIds = jobIdsObject.map((id) => `/jobs/${id.jobid}`);
+    const jobIds = jobIdsObject.map((id) => `/jobs/${id.jobid}`);
 
-  return {
-    paths: jobIds,
-    fallback: false,
-  };
+    return {
+      paths: jobIds,
+      fallback: false,
+    };
+  } catch {
+    return {
+      paths: [`/jobs/ed6e6a52-7cf2-4d99-8c97-c2cc94cd9942`],
+      fallback: false,
+    };
+  }
 }
 
 type JobId = {
