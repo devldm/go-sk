@@ -1,4 +1,4 @@
-import { jobs } from "@prisma/client";
+//import { jobs } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../db";
 
@@ -11,7 +11,7 @@ export default async function handler(
   }
 
   try {
-    const postData: jobs = await prisma.jobs.create({
+    const postData: any = await prisma.jobs.create({ // TODO: turn this back to jobs from  any
       data: {
         jobid: req.body.jobid,
         jobdescription: req.body.jobdescription,
