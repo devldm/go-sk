@@ -7,7 +7,7 @@ import Link from "next/link";
 import { job } from "../../mockData";
 
 export async function getStaticProps({ params }: any) {
-  try {
+  if (prisma.jobs) {
     const job: any = await prisma.jobs.findUnique({
       where: {
         jobid: params.id,
@@ -17,15 +17,15 @@ export async function getStaticProps({ params }: any) {
     return {
       props: { job },
     };
-  } catch {
-    return {
-      props: { job },
-    };
   }
+
+  return {
+    props: { job },
+  };
 }
 
 export async function getStaticPaths() {
-  try {
+  if (prisma.jobs) {
     const jobIdsObject: JobId[] = await prisma.jobs.findMany({
       select: {
         jobid: true,
@@ -38,12 +38,12 @@ export async function getStaticPaths() {
       paths: jobIds,
       fallback: false,
     };
-  } catch {
-    return {
-      paths: [`/jobs/ed6e6a52-7cf2-4d99-8c97-c2cc94cd9942`],
-      fallback: false,
-    };
   }
+
+  return {
+    paths: [`/jobs/ed6e6a52-7cf2-4d99-8c97-c2cc94cd9942`],
+    fallback: false,
+  };
 }
 
 type JobId = {
