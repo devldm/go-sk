@@ -1,5 +1,4 @@
 .jobPostContainer {
-  background-color: bisque;
   border-radius: 10px;
   margin-bottom: 8px;
   padding: 10px;
@@ -52,7 +51,7 @@
 @media (prefers-color-scheme: dark) {
   .jobPostContainer {
     color: #f0f6fc;
-    background: #222;
+    background: #222; 
   }
 
   .jobLocation {

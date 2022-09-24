@@ -24,7 +24,8 @@ a {
   }
   body {
     color: #f0f6fc;
-    background: black;
+    background: #121212;
+    /*background: black;*/
   }
 }
 
@@ -34,6 +35,7 @@ a {
   }
   body {
     color: #222;
-    background: white;
+    /*background: white;*/
+    background: #f0f6fc;
   }
 }

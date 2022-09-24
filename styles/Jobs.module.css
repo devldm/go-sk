@@ -1,7 +1,3 @@
-.container {
-  padding: 0 2rem;
-}
-
 .jobs {
   display: flex;
   flex-direction: column;
@@ -34,13 +30,13 @@
 }
 
 .title {
-  text-align: center;
+  text-align: left;
+  width: 60%;
 }
 
 @media (max-width: 1400px) {
   .container {
     width: 100vw;
-    padding: 0 2rem;
   }
 
   .jobContent {
@@ -49,13 +45,16 @@
 
   .jobs {
     width: 80%;
+  }
+
+  .title {
+    width: 80%
   }
 }
 
 @media (max-width: 900px) {
   .container {
     width: 100vw;
-    padding: 0 2rem;
   }
 
   .jobContent {
@@ -65,12 +64,14 @@
   .jobs {
     width: 80%;
   }
+  .title {
+    width: 80%
+  }
 }
 
 @media (max-width: 600px) {
   .container {
     width: 100vw;
-    padding: 0 1rem;
   }
 
   .jobContent {
@@ -78,6 +79,9 @@
   }
 
   .jobs {
-    width: 100%;
+    width: 93%;
+  }
+  .title {
+    width: 93%
   }
 }

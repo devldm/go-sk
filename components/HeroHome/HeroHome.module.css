@@ -7,6 +7,14 @@
   grid-template-areas: ". .";
 }
 
+.jobsCta {
+  width: 40%;
+  padding: 15px;
+  border-radius: 30px;
+  font-size: 20px;
+  border: none;
+}
+
 .landingImage {
   object-fit: contain;
 }
@@ -28,21 +36,21 @@
 .heroText {
   margin: 0 auto;
   flex-direction: column;
-  align-items: flex-start;
+  /*align-items: flex-start;*/
 }
 
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 3.5rem;
-  text-align: left;
+  font-size: 5rem;
+  text-align: center;
 }
 
 .description {
   margin: 4rem 0;
   line-height: 1.5;
-  font-size: 1.5rem;
-  text-align: left;
+  font-size: 2rem;
+  text-align: center;
 }
 
 @media (max-width: 900px) {
@@ -56,6 +64,14 @@
 
   .heroText {
     padding-top: 100px;
+  }
+
+  .title{
+    font-size: 4rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
   }
 
   .heroText,
@@ -75,7 +91,21 @@
   .landingImage {
     width: 100%;
   }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .jobsCta {
+    width: 80%;
+
+  }
 }
 
 @media (max-width: 600px) {
+}
+@media (prefers-color-scheme: light) {
+  .jobsCta {
+    background-color: #5783db;
+  }
 }

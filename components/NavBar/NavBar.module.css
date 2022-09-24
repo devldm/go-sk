@@ -3,15 +3,20 @@
   margin: auto;
   align-items: center;
   justify-content: space-between;
-  max-width: 90%;
+  width: 60%;
 }
 
 .linkFlex {
   display: flex;
   text-align: right;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 25px;
+  /* font-weight: bold; */
 }
+
+/* .link:hover{
+  color: hsl(205, 100%, 52%);
+  text-decoration: underline;
+} */
 
 .logo {
   display: flex;
@@ -29,7 +34,7 @@
 
 @media (max-width: 768px) {
   .navFlex {
-    width: 100vw;
+    width: 93%;
   }
 
   .linkFlex {
@@ -39,6 +44,22 @@
 
 @media (max-width: 600px) {
   .navFlex {
-    width: 100%;
+    /* width: 100%; */
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .navBox {
+    width: 100%;
+    background-color: rgb(51, 74, 87);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .navBox {
+    width: 100%;
+    background: gainsboro;
+  }
+}
+
+

@@ -1,6 +1,7 @@
 import styles from "./HeroHome.module.css";
 import Image from "next/future/image";
 import skImage from "../../public/skImage1.jpg";
+import Link from "next/link";
 
 export default function HeroHome() {
   return (
@@ -11,6 +12,8 @@ export default function HeroHome() {
         <p className={styles.description}>
           Find your dream role in South Korea{" "}
         </p>
+
+        <Link href="/jobs"><button className={styles.jobsCta}>See our Jobs</button></Link>
       </div>
       <div className={styles.heroImage}>
         <Image src={skImage} className={styles.landingImage} priority />
