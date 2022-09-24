@@ -1,4 +1,6 @@
-export const jobs = [
+import { Job } from "./types"
+
+export const jobs: Job[] = [
     {
         jobid: "ed6e6a52-7cf2-4d99-8c97-c2cc94cd9942",
         jobtitle: "Software Engineer",
@@ -10,7 +12,7 @@ export const jobs = [
     }
 ]
 
-export const job = {
+export const job: any = {
         jobid: "ed6e6a52-7cf2-4d99-8c97-c2cc94cd9942",
         jobtitle: "Software Engineer",
         companyname: "Adriel",

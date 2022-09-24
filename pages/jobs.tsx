@@ -9,13 +9,13 @@ import { Job, JobPostings } from "../types";
 import { jobs } from "../mockData";
 
 export async function getStaticProps() {
-  if (prisma.jobs) {
-    const jobs: Job[] = await prisma.jobs.findMany();
+  // if (prisma.jobs) {
+  //   const jobs: Job[] = await prisma.jobs.findMany();
 
-    return {
-      props: { jobs },
-    };
-  }
+  //   return {
+  //     props: { jobs },
+  //   };
+  // }
 
   return {
     props: { jobs },
