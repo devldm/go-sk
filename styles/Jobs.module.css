@@ -32,7 +32,16 @@
 .title {
   text-align: left;
   width: 60%;
+  font-size: 45px;
 }
+
+.paragraph {
+  width: 60%;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
 
 @media (max-width: 1400px) {
   .container {
@@ -50,6 +59,10 @@
   .title {
     width: 80%
   }
+
+  .paragraph {
+    width: 80%;
+  }
 }
 
 @media (max-width: 900px) {
@@ -64,8 +77,13 @@
   .jobs {
     width: 80%;
   }
+
   .title {
     width: 80%
+  }
+
+  .paragraph {
+    width: 80%;
   }
 }
 
@@ -81,7 +99,12 @@
   .jobs {
     width: 93%;
   }
+
   .title {
     width: 93%
+  }
+
+  .paragraph {
+    width: 93%;
   }
 }

@@ -1,5 +1,13 @@
+.button {
+    max-width: 150px;
+}
+
+.button {
+    padding: 10px;
+}
+
 @media (max-width: 600px) {
     .button {
         max-width: 80px;
     }
-  }
+}
