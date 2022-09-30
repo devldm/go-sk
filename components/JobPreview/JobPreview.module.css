@@ -2,7 +2,7 @@
   border-radius: 10px;
   margin-bottom: 8px;
   padding: 10px;
-  border: 1px solid #30363d;
+  border: 0.25px solid #30363d67;
 }
 
 .headingFlex {
@@ -51,7 +51,7 @@
 @media (prefers-color-scheme: dark) {
   .jobPostContainer {
     color: #f0f6fc;
-    background: #222; 
+    background: #222;
   }
 
   .jobLocation {
@@ -62,6 +62,6 @@
 @media (prefers-color-scheme: light) {
   .jobPostContainer {
     color: #222;
-    background: gainsboro;
+    background: #ced4da;
   }
 }

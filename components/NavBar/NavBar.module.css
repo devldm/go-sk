@@ -58,8 +58,6 @@
 @media (prefers-color-scheme: light) {
   .navBox {
     width: 100%;
-    background: gainsboro;
+    background: #ced4da;
   }
 }
-
-
