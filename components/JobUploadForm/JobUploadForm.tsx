@@ -64,6 +64,8 @@ export default function JobUploadForm() {
     ],
   };
 
+  // TODO: ensrure back ground shows as expected on desktop if we go with that design
+
   return (
     <div>
       <form onSubmit={handleSubmit} className={styles.jobUploadForm}>
