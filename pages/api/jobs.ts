@@ -20,7 +20,7 @@ export default async function handler(
         company_name: req.body.company_name,
         location: req.body.location,
         //apply_url: req.body.apply_url,
-        linkedin_url: req.body.linkedin_url,
+        //linkedin_url: req.body.linkedin_url,
       },
     });
   } catch (err) {
