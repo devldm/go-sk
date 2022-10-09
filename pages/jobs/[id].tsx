@@ -4,7 +4,6 @@ import prisma from "../../db";
 import StickyApply from "../../components/StickyApply/StickyApply";
 import Layout from "../../components/Layout/Layout";
 import Link from "next/link";
-import { job } from "../../mockData";
 
 export async function getStaticProps({ params }: any) {
     const job: any = await prisma.go_sk_jobs.findUnique({

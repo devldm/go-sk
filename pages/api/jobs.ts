@@ -22,8 +22,7 @@ export default async function handler(
         linkedin_url: req.body.linkedin_url,
       },
     });
-    console.log("temp")
   } catch (err) {
-    console.log(err);
+
   }
 }
