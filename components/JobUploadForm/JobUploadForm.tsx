@@ -18,7 +18,6 @@ export default function JobUploadForm() {
   };
 
   const [formState, setFormState] = useState(defaultJobForm);
-  const [value, setValue] = useState("");
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();

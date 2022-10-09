@@ -1,6 +1,7 @@
 //import { jobs } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../db";
+import { Job } from "../../types";
 
 export default async function handler(
   req: NextApiRequest,
@@ -11,7 +12,7 @@ export default async function handler(
   }
 
   try {
-    const postData: any = await prisma.go_sk_jobs.create({ // TODO: turn this back to jobs from  any
+    const postData: Job = await prisma.go_sk_jobs.create({ // TODO: turn this back to jobs from  any
       data: {
         job_id: req.body.job_id,
         job_description: req.body.job_description,
