@@ -9,13 +9,7 @@ import { Job, JobPostings } from "../types";
 import { jobs } from "../mockData";
 
 export async function getStaticProps() {
-  // if (prisma.jobs) {
-  //   const jobs: Job[] = await prisma.jobs.findMany();
-
-  //   return {
-  //     props: { jobs },
-  //   };
-  // }
+    const jobs: Job[] = await prisma.go_sk_jobs.findMany();
 
   return {
     props: { jobs },
@@ -41,9 +35,9 @@ const Jobs: NextPage<JobPostings> = ({
             {jobs && (
               <>
                 {jobs.map((job: any) => (
-                  <Link href={`jobs/${job.jobid}`} key={job.jobid} passHref>
+                  <Link href={`jobs/${job.job_id}`} key={job.job_id} passHref>
                     <a>
-                      <JobPreview jobProps={job} key={job.jobid} />
+                      <JobPreview jobProps={job} key={job.job_id} />
                     </a>
                   </Link>
                 ))}

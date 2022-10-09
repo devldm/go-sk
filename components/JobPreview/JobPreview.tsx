@@ -10,10 +10,10 @@ export default function JobPreview({ jobProps }: Props) {
     <div className={styles.jobPostContainer}>
       <div className={styles.headingFlex}>
         <div className={styles.titleLocation}>
-          <h1 className={styles.jobTitle}>{jobProps?.jobtitle}</h1>
-          <p className={styles.jobLocation}>{jobProps?.joblocation}</p>
+          <h1 className={styles.jobTitle}>{jobProps?.job_title}</h1>
+          <p className={styles.jobLocation}>{jobProps?.location}</p>
         </div>
-        <div className={styles.companyName}>{jobProps?.companyname}</div>
+        <div className={styles.companyName}>{jobProps?.company_name}</div>
       </div>
     </div>
   );

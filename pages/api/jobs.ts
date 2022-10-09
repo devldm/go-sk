@@ -11,17 +11,17 @@ export default async function handler(
   }
 
   try {
-    // const postData: any = await prisma.jobs.create({ // TODO: turn this back to jobs from  any
-    //   data: {
-    //     jobid: req.body.jobid,
-    //     jobdescription: req.body.jobdescription,
-    //     jobtitle: req.body.jobtitle,
-    //     companyname: req.body.companyname,
-    //     joblocation: req.body.joblocation,
-    //     applyurl: req.body.applyurl,
-    //     linkedinurl: req.body.linkedinurl,
-    //   },
-    // });
+    const postData: any = await prisma.go_sk_jobs.create({ // TODO: turn this back to jobs from  any
+      data: {
+        job_id: req.body.job_id,
+        job_description: req.body.job_description,
+        job_title: req.body.job_title,
+        company_name: req.body.company_name,
+        location: req.body.location,
+        apply_url: req.body.apply_url,
+        linkedin_url: req.body.linkedin_url,
+      },
+    });
     console.log("temp")
   } catch (err) {
     console.log(err);

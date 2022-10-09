@@ -8,13 +8,13 @@ import { Job } from "../../types";
 
 export default function JobUploadForm() {
   const defaultJobForm: Job = {
-    jobid: "",
-    jobtitle: "",
-    companyname: "",
-    joblocation: "",
-    jobdescription: "",
-    applyurl: "",
-    linkedinurl: "",
+    job_id: "",
+    job_title: "",
+    company_name: "",
+    location: "",
+    job_description: "",
+    apply_url: "",
+    linkedin_url: "",
   };
 
   const [formState, setFormState] = useState(defaultJobForm);
@@ -24,13 +24,13 @@ export default function JobUploadForm() {
     event.preventDefault();
 
     const data: Job = {
-      jobid: self.crypto.randomUUID(),
-      jobdescription: DOMPurify.sanitize(formState.jobdescription ?? "null"),
-      jobtitle: formState.jobtitle,
-      joblocation: formState.joblocation,
-      companyname: formState.companyname,
-      applyurl: formState.applyurl,
-      linkedinurl: formState.linkedinurl,
+      job_id: self.crypto.randomUUID(),
+      job_description: DOMPurify.sanitize(formState.job_description ?? "null"),
+      job_title: formState.job_title,
+      location: formState.location,
+      company_name: formState.company_name,
+      apply_url: formState.apply_url,
+      linkedin_url: formState.linkedin_url,
     };
 
     const response = await fetch("/api/jobs", {
@@ -77,7 +77,7 @@ export default function JobUploadForm() {
           onChange={(e) =>
             setFormState({
               ...formState,
-              jobtitle: e.target.value,
+              job_title: e.target.value,
             })
           }
         />
@@ -89,7 +89,7 @@ export default function JobUploadForm() {
           onChange={(e) =>
             setFormState({
               ...formState,
-              companyname: e.target.value,
+              company_name: e.target.value,
             })
           }
         />
@@ -102,7 +102,7 @@ export default function JobUploadForm() {
           onChange={(e) =>
             setFormState({
               ...formState,
-              joblocation: e.target.value,
+              location: e.target.value,
             })
           }
         />
@@ -115,7 +115,7 @@ export default function JobUploadForm() {
           onChange={(e) =>
             setFormState({
               ...formState,
-              applyurl: e.target.value,
+              apply_url: e.target.value,
             })
           }
         />
@@ -128,18 +128,19 @@ export default function JobUploadForm() {
           onChange={(e) =>
             setFormState({
               ...formState,
-              linkedinurl: e.target.value,
+              linkedin_url: e.target.value,
             })
           }
         />
         <label htmlFor="jobDescription">Job description:</label>
         <ReactQuill
+          className={styles.qlEditor}
           theme="snow"
           modules={modules}
           onChange={(e) =>
             setFormState({
               ...formState,
-              jobdescription: e,
+              job_description: e,
             })
           }
         />

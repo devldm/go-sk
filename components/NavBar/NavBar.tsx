@@ -10,7 +10,7 @@ export default function NavBar() {
       <div className={styles.logo}>
         <Image src={skFlag} />
         <Link href="/">
-          <h2>GO-SK</h2>
+          <a><h2 className={styles.logoText}>GO-SK</h2></a>
         </Link>
       </div>
       <div className={styles.linkFlex}>

@@ -7,47 +7,39 @@ import Link from "next/link";
 import { job } from "../../mockData";
 
 export async function getStaticProps({ params }: any) {
-  // if (prisma.jobs) {
-  //   const job: any = await prisma.jobs.findUnique({
-  //     where: {
-  //       jobid: params.id,
-  //     },
-  //   });
+    const job: any = await prisma.go_sk_jobs.findUnique({
+      where: {
+        job_id: params.id,
+      },
+    });
 
-  //   return {
-  //     props: { job },
-  //   };
-  // }
-
-  return {
-    props:  {job},
-  };
+    return {
+      props: { job },
+    };
 }
 
 export async function getStaticPaths() {
-  // if (prisma.jobs) {
-  //   const jobIdsObject: JobId[] = await prisma.jobs.findMany({
-  //     select: {
-  //       jobid: true,
-  //     },
-  //   });
+    const jobIdsObject: JobId[] = await prisma.go_sk_jobs.findMany({
+      select: {
+        job_id: true,
+      },
+    });
 
-  //   const jobIds = jobIdsObject.map((id) => `/jobs/${id.jobid}`);
+    const jobIds = jobIdsObject.map((id) => `/jobs/${id.job_id}`);
 
-  //   return {
-  //     paths: jobIds,
-  //     fallback: false,
-  //   };
-  // }
+    return {
+      paths: jobIds,
+      fallback: false,
+    };
 
-  return {
-    paths: [`/jobs/ed6e6a52-7cf2-4d99-8c97-c2cc94cd9942`],
-    fallback: false,
-  };
+  // return {
+  //   paths: [`/jobs/ed6e6a52-7cf2-4d99-8c97-c2cc94cd9942`],
+  //   fallback: false,
+  // };
 }
 
 type JobId = {
-  jobid: string;
+  job_id: string;
 };
 
 type JobPosting = {
@@ -59,23 +51,16 @@ const Job: NextPage<JobPosting> = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout pageTitle={"Job details"}>
-      <h1 className={styles.title}>{job.jobtitle}</h1>
-      <p className={styles.location}>{job.joblocation}</p>
+      <h1 className={styles.title}>{job.job_title}</h1>
+      <p className={styles.location}>{job.location}</p>
       <div className={styles.nameAndButton}>
-        <p className={styles.companyName}>{job.companyname}</p>
-        <StickyApply applyUrl={job.applyurl ?? "no url"} />
+        <p className={styles.companyName}>{job.company_name}</p>
+        <StickyApply applyUrl={job.apply_url ?? "no url"} />
       </div>
       <hr />
-      <div dangerouslySetInnerHTML={{ __html: job.jobdescription ?? "no content" }} />
+      <div dangerouslySetInnerHTML={{ __html: job.job_description ?? "no content" }} />
       <Link href="/jobs">
-        <p
-          style={{
-            color: "hsl(205, 100%, 52%)",
-            fontWeight: "bold",
-            textAlign: "right",
-            fontSize: "20px",
-          }}
-        >
+        <p className={styles.backToJobs}>
           Go back to Jobs
         </p>
       </Link>
