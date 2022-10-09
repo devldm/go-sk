@@ -19,7 +19,7 @@ export default async function handler(
         job_title: req.body.job_title,
         company_name: req.body.company_name,
         location: req.body.location,
-        apply_url: req.body.apply_url,
+        //apply_url: req.body.apply_url,
         linkedin_url: req.body.linkedin_url,
       },
     });
