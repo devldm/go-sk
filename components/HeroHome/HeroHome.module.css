@@ -5,14 +5,21 @@
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas: ". .";
+  padding-right: 0rem;
+  padding-left: 10rem;
 }
 
 .jobsCta {
   width: 40%;
   padding: 15px;
-  border-radius: 30px;
-  font-size: 20px;
+  border-radius: 10px;
+  font-size: 25px;
   border: none;
+  background-color: #3758f9;
+}
+
+.cityName {
+  color: #3758f9;
 }
 
 .landingImage {
@@ -20,37 +27,40 @@
 }
 
 .heroImage {
-  object-fit: cover;
-  height: min-content;
+  object-fit: contain;
+  height: 95vh;
+  overflow: hidden;
+
 }
 
 .heroText,
 .heroImage {
   display: flex;
   justify-content: center;
-  padding: 0px 50px;
-  padding: 1rem 3rem;
   align-items: center;
 }
 
 .heroText {
   margin: 0 auto;
   flex-direction: column;
-  /*align-items: flex-start;*/
+  align-items: flex-start;
+  padding: 0rem 3rem;
 }
 
 .title {
   margin: 0;
   line-height: 1.15;
   font-size: 5rem;
-  text-align: center;
+  text-align: left;
 }
 
 .description {
-  margin: 4rem 0;
+  margin: 2rem 0;
   line-height: 1.5;
-  font-size: 2rem;
-  text-align: center;
+  font-size: 1.5rem;
+  text-align: left;
+  font-style: italic;
+  opacity: 0.75;
 }
 
 @media (max-width: 900px) {
@@ -60,10 +70,11 @@
     grid-auto-flow: row;
     grid-template-areas: ".";
     max-width: 100%;
+    padding-left: 0
   }
 
   .heroText {
-    padding-top: 100px;
+    padding-top: 100px;;
   }
 
   .title{
@@ -80,6 +91,10 @@
     height: 100%;
   }
 
+  .heroImage {
+    margin-top: 5rem;
+  }
+
   .heroImage img {
     padding: 0;
     object-fit: cover;
@@ -88,8 +103,26 @@
 }
 
 @media (max-width: 768px) {
+  .heroHomeContainer {
+    padding-left: 0rem;
+  }
+
+  .heroText {
+    margin-bottom: 100px;
+    padding: 1rem 2rem
+  }
+
+  .description {
+    font-size: 1.20rem;
+    margin: 1rem 0rem
+  }
+
+  .heroImage {
+    margin-top: 0;
+  }
+
   .landingImage {
-    width: 100%;
+    width: 90%;
   }
 
   .title {
@@ -106,6 +139,6 @@
 }
 @media (prefers-color-scheme: light) {
   .jobsCta {
-    background-color: #5783db;
+    color: white
   }
 }
