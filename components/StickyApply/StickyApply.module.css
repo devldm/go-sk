@@ -4,13 +4,14 @@
 
 .button {
     padding: 15px;
-    background-color: #3758f9;;
-    border-radius: 10px;
-    color: white
+    background-color: #3758f9;
+    border-radius: 7px;
+    color: white;
+    border: none;
 }
 
 @media (max-width: 600px) {
     .button {
-        max-width: 80px;
+        max-width: 100%;
     }
 }

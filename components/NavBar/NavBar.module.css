@@ -25,9 +25,7 @@
 }
 
 .link:hover {
-  color: hsl(205, 100%, 52%);
-  text-decoration: underline;
-
+  color: #3758f9;
 }
 
 .logo {
@@ -65,12 +63,14 @@
     width: 100%;
     /*background-color: rgb(51, 74, 87);*/
     background-color: #222;
+    box-shadow: 0 2px 1px -1px #3758f9;
   }
 }
 
 @media (prefers-color-scheme: light) {
   .navBox {
     width: 100%;
-    background: #ced4da;
+    background: #e9e9e9;
+    box-shadow: 0 2px 1px -1px #3758f9;
   }
 }

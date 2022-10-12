@@ -6,13 +6,13 @@
   grid-auto-flow: row;
   grid-template-areas: ". .";
   padding-right: 0rem;
-  padding-left: 10rem;
+  padding-left: 7rem;
 }
 
 .jobsCta {
   width: 40%;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 7px;
   font-size: 25px;
   border: none;
   background-color: #3758f9;
