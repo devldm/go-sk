@@ -13,7 +13,7 @@ export default function HeroHome() {
         </h1>
 
         <p className={styles.description}>
-          We aim to be the bridge between the worlds talent and South Korea's
+          We aim to be the bridge between the worlds talent and South Korea
           vibrant economy{" "}
         </p>
 
