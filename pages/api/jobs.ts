@@ -11,7 +11,7 @@ export default async function handler(
     return res.status(405).json({ message: "Method not allowed" });
   }
   try {
-    const postData: Job = await prisma.go_sk_jobs.create({ // TODO: turn this back to jobs from  any
+    const postData: Job = await prisma.go_sk_jobs.create({ 
       data: {
         job_id: req.body.job_id,
         job_description: req.body.job_description,
@@ -22,7 +22,9 @@ export default async function handler(
         linkedin_url: req.body.linkedin_url,
       },
     });
-  } catch (err) {
 
+    return res.status(200).send('Success')
+  } catch (err) {
+    return res.status(500).send('Server error')
   }
 }

@@ -39,6 +39,12 @@ export default function JobUploadForm() {
       },
       body: JSON.stringify(data),
     });
+
+    if (response.ok) {
+      alert("Job submitted successfully! It'll be on the jobs page soon.");
+    } else {
+      alert("Job post failed. Please try again laters");
+    }
   };
 
   const modules = {
