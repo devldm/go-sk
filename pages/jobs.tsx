@@ -1,7 +1,4 @@
-import type {
-  InferGetServerSidePropsType,
-  NextPage,
-} from "next";
+import type { InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Jobs.module.css";
 import NavBar from "../components/NavBar/NavBar";
@@ -10,17 +7,18 @@ import JobPreview from "../components/JobPreview/JobPreview";
 import Link from "next/link";
 import { Job, JobPostings } from "../types";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const jobs: Job[] = await prisma.go_sk_jobs.findMany();
 
   return {
     props: { jobs },
+    revalidate: 30,
   };
 }
 
 const Jobs: NextPage<JobPostings> = ({
   jobs,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div className={styles.container}>
       <Head>
