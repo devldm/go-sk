@@ -1,4 +1,7 @@
-import type { InferGetStaticPropsType, NextPage } from "next";
+import type {
+  InferGetServerSidePropsType,
+  NextPage,
+} from "next";
 import Head from "next/head";
 import styles from "../styles/Jobs.module.css";
 import NavBar from "../components/NavBar/NavBar";
@@ -6,10 +9,9 @@ import prisma from "../db";
 import JobPreview from "../components/JobPreview/JobPreview";
 import Link from "next/link";
 import { Job, JobPostings } from "../types";
-import { jobs } from "../mockData";
 
-export async function getStaticProps() {
-    const jobs: Job[] = await prisma.go_sk_jobs.findMany();
+export async function getServerSideProps() {
+  const jobs: Job[] = await prisma.go_sk_jobs.findMany();
 
   return {
     props: { jobs },
@@ -18,7 +20,7 @@ export async function getStaticProps() {
 
 const Jobs: NextPage<JobPostings> = ({
   jobs,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -30,7 +32,10 @@ const Jobs: NextPage<JobPostings> = ({
       <main className={styles.main}>
         <div className={styles.jobContent}>
           <h1 className={styles.title}>Jobs</h1>
-          <p className={styles.paragraph}>We partner with firms to get the best roles for software engineers looking to relocate to Seoul. </p>
+          <p className={styles.paragraph}>
+            We partner with firms to get the best roles for software engineers
+            looking to relocate to Seoul.{" "}
+          </p>
           <div className={styles.jobs}>
             {jobs && (
               <>
