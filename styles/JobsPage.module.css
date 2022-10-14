@@ -10,6 +10,7 @@
 
 .description {
   margin-bottom: 30px;
+  line-break: anywhere;
 }
 
 .backToJobs {
