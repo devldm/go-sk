@@ -30,6 +30,7 @@ export async function getStaticPaths() {
   return {
     paths: jobIds,
     fallback: false,
+    revalidate: 30,
   };
 
   // return {
