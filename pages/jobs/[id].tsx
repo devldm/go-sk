@@ -58,6 +58,7 @@ const Job: NextPage<JobPosting> = ({
       </div>
       <hr />
       <div
+        className={styles.description}
         dangerouslySetInnerHTML={{
           __html: job.job_description ?? "no content",
         }}

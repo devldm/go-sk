@@ -8,20 +8,24 @@
   white-space: break-spaces;
 }
 
+.description {
+  margin-bottom: 30px;
+}
+
 .backToJobs {
   color: #3758f9;
   font-weight: bold;
   text-align: right;
   font-size: 20px;
   cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 80px;
 }
 
 .location {
   margin: 0;
   font-style: italic;
 }
-
-.description {}
 
 .companyName {
   margin-bottom: 0;
@@ -38,10 +42,25 @@
 }
 
 @media (max-width: 900px) {
+  .title {
+    font-size: 40px;
+  }
+
+  .location {
+    font-size: 20px;
+  }
+
+  .companyName {
+    font-size: 15px;
+  }
+
+  .description {
+    font-size: 17px;
+  }
+
   .container {
     width: 100vw;
   }
-
   .jobContent {
     width: 80%;
   }
