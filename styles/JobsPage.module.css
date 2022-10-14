@@ -23,6 +23,7 @@
 
 .jobsWrapper {
   height: auto;
+  margin-bottom: 100px;
 }
 
 .location {
@@ -61,18 +62,12 @@
     font-size: 17px;
   }
 
-  .container {
-    width: 100vw;
-  }
   .jobContent {
     width: 80%;
   }
 }
 
 @media (max-width: 600px) {
-  .container {
-    width: 100vw;
-  }
 
   .jobContent {
     width: 100%;
