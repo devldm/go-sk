@@ -4,6 +4,10 @@
   width: 60%;
 }
 
+.jobs:last-child {
+  margin-bottom: 150px;
+}
+
 .footer {
   display: flex;
   flex: 1;
@@ -26,7 +30,6 @@
   align-items: center;
   width: 60%;
   margin: 0 auto;
-  height: 100vh;
 }
 
 .title {
