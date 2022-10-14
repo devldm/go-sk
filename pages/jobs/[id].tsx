@@ -50,23 +50,25 @@ const Job: NextPage<JobPosting> = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout pageTitle={"Job details"}>
-      <h1 className={styles.title}>{job.job_title}</h1>
-      <p className={styles.location}>{job.location}</p>
-      <div className={styles.nameAndButton}>
-        <p className={styles.companyName}>{job.company_name}</p>
-        <StickyApply applyUrl={job.apply_url ?? "no url"} />
+      <div className={styles.jobsWrapper}>
+        <h1 className={styles.title}>{job.job_title}</h1>
+        <p className={styles.location}>{job.location}</p>
+        <div className={styles.nameAndButton}>
+          <p className={styles.companyName}>{job.company_name}</p>
+          <StickyApply applyUrl={job.apply_url ?? "no url"} />
+        </div>
+        <hr />
+        <div
+          className={styles.description}
+          dangerouslySetInnerHTML={{
+            __html: job.job_description ?? "no content",
+          }}
+        />
+        <StickyApply />
+        <Link href="/jobs">
+          <p className={styles.backToJobs}>Go back to Jobs</p>
+        </Link>
       </div>
-      <hr />
-      <div
-        className={styles.description}
-        dangerouslySetInnerHTML={{
-          __html: job.job_description ?? "no content",
-        }}
-      />
-      <StickyApply />
-      <Link href="/jobs">
-        <p className={styles.backToJobs}>Go back to Jobs</p>
-      </Link>
     </Layout>
   );
 };
