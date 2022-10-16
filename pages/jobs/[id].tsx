@@ -1,9 +1,10 @@
 import type { InferGetStaticPropsType, NextPage } from "next";
 import styles from "../../styles/JobsPage.module.css";
 import prisma from "../../db";
-import StickyApply from "../../components/StickyApply/StickyApply";
 import Layout from "../../components/Layout/Layout";
 import Link from "next/link";
+import LinkedInIcon from "../../components/SocialIcons/LinkedInIcon";
+import Button from "../../components/Button/Button";
 
 export async function getStaticProps({ params }: any) {
   const job: any = await prisma.go_sk_jobs.findUnique({
@@ -56,7 +57,7 @@ const Job: NextPage<JobPosting> = ({
         <p className={styles.location}>{job.location}</p>
         <div className={styles.nameAndButton}>
           <p className={styles.companyName}>{job.company_name}</p>
-          <StickyApply applyUrl={job.apply_url ?? "no url"} />
+          <Button applyUrl={job.apply_url ?? "no url"} buttonText={"Apply"} />
         </div>
         <hr />
         <div
@@ -65,7 +66,7 @@ const Job: NextPage<JobPosting> = ({
             __html: job.job_description ?? "no content",
           }}
         />
-        <StickyApply />
+        <Button applyUrl={job.apply_url ?? "No url"} buttonText={"Apply"} />
         <Link href="/jobs">
           <p className={styles.backToJobs}>Go back to Jobs</p>
         </Link>

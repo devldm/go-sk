@@ -2,6 +2,7 @@ import styles from "./HeroHome.module.css";
 import Image from "next/future/image";
 import skImage from "../../public/skImage2.jpg";
 import Link from "next/link";
+import Button from "../Button/Button";
 
 export default function HeroHome() {
   return (
@@ -18,7 +19,10 @@ export default function HeroHome() {
         </p>
 
         <Link href="/jobs">
-          <button className={styles.jobsCta}>See our Jobs</button>
+          {/* <button className={styles.jobsCta}>See our Jobs</button> */}
+          <a href="">
+            <Button buttonText="See our jobs" className={styles.jobsCta} />
+          </a>
         </Link>
       </div>
       <div className={styles.heroImage}>

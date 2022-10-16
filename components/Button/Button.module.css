@@ -1,14 +1,18 @@
 .button {
-    max-width: 150px;
-}
-
-.button {
     padding: 15px;
     background-color: #3758f9;
     border-radius: 7px;
     color: white;
     border: none;
+    cursor: pointer;
 }
+
+.button:hover {
+    box-shadow: 0px 0px 4px #fff;
+
+}
+
+
 
 @media (max-width: 600px) {
     .button {

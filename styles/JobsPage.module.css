@@ -45,6 +45,7 @@
 
 .nameAndButton a {
   text-align: right;
+  width: max-content;
 }
 
 @media (max-width: 900px) {
