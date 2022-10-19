@@ -48,7 +48,7 @@ const Job: NextPage<JobPosting> = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   function getTimeSincePosting(dateTime: string) {
     var end = DateTime.now();
-    var start = DateTime.fromISO(dateTime);
+    var start = DateTime.fromISO(dateTime).minus({ days: 100 });
 
     var diffInMonths = end.diff(start, "months").toObject().months;
     var diffInDays = end.diff(start, "days").toObject().days;
@@ -59,11 +59,11 @@ const Job: NextPage<JobPosting> = ({
     if (diffDays < 2) {
       return <p>Posted today</p>;
     } else if (diffDays >= 2 && diffMonths < 1) {
-      return <p>Posted {diffDays} day's ago</p>;
+      return <p>{`Posted ${diffDays} day's ago`}</p>;
     } else if (diffMonths < 2 && diffMonths >= 1) {
       return <p>Posted {diffMonths} month ago</p>;
     } else if (diffMonths > 1 && diffMonths <= 12) {
-      return <p>Posted {diffMonths} month's ago</p>;
+      return <p>{`Posted ${diffMonths} month's ago`}</p>;
     } else {
       return <p>Posted over a year ago</p>;
     }

@@ -14,12 +14,11 @@ export default function HeroHome() {
         </h1>
 
         <p className={styles.description}>
-          We aim to be the bridge between the worlds talent and South Korea
-          vibrant economy{" "}
+          {`We aim to be the bridge between the worlds talent and South Korea's
+          vibrant economy`}{" "}
         </p>
 
         <Link href="/jobs">
-          {/* <button className={styles.jobsCta}>See our Jobs</button> */}
           <a href="">
             <Button buttonText="See our jobs" className={styles.jobsCta} />
           </a>
