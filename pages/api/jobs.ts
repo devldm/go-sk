@@ -20,6 +20,7 @@ export default async function handler(
         location: req.body.location,
         apply_url: req.body.apply_url,
         linkedin_url: req.body.linkedin_url,
+        posted_datetime: req.body.posted_datetime
       },
     });
 

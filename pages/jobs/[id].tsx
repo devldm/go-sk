@@ -5,6 +5,7 @@ import Layout from "../../components/Layout/Layout";
 import Link from "next/link";
 import LinkedInIcon from "../../components/SocialIcons/LinkedInIcon";
 import Button from "../../components/Button/Button";
+import { DateTime } from "luxon";
 
 export async function getStaticProps({ params }: any) {
   const job: any = await prisma.go_sk_jobs.findUnique({
@@ -32,11 +33,6 @@ export async function getStaticPaths() {
     paths: jobIds,
     fallback: "blocking",
   };
-
-  // return {
-  //   paths: [`/jobs/ed6e6a52-7cf2-4d99-8c97-c2cc94cd9942`],
-  //   fallback: false,
-  // };
 }
 
 type JobId = {
@@ -50,6 +46,29 @@ type JobPosting = {
 const Job: NextPage<JobPosting> = ({
   job,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  function getTimeSincePosting(dateTime: string) {
+    var end = DateTime.now();
+    var start = DateTime.fromISO(dateTime);
+
+    var diffInMonths = end.diff(start, "months").toObject().months;
+    var diffInDays = end.diff(start, "days").toObject().days;
+
+    var diffMonths = Math.floor(diffInMonths!);
+    var diffDays = Math.ceil(diffInDays!);
+
+    if (diffDays < 2) {
+      return <p>Posted today</p>;
+    } else if (diffDays >= 2 && diffMonths < 1) {
+      return <p>Posted {diffDays} day's ago</p>;
+    } else if (diffMonths < 2 && diffMonths >= 1) {
+      return <p>Posted {diffMonths} month ago</p>;
+    } else if (diffMonths > 1 && diffMonths <= 12) {
+      return <p>Posted {diffMonths} month's ago</p>;
+    } else {
+      return <p>Posted over a year ago</p>;
+    }
+  }
+
   return (
     <Layout pageTitle={"Job details"}>
       <div className={styles.jobsWrapper}>
@@ -57,6 +76,9 @@ const Job: NextPage<JobPosting> = ({
         <p className={styles.location}>{job.location}</p>
         <div className={styles.nameAndButton}>
           <p className={styles.companyName}>{job.company_name}</p>
+          {job.posted_datetime && (
+            <div>{getTimeSincePosting(job.posted_datetime)}</div>
+          )}
           <Button applyUrl={job.apply_url ?? "no url"} buttonText={"Apply"} />
         </div>
         <hr />

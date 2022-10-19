@@ -15,6 +15,7 @@ model go_sk_jobs {
   job_description String
   linkedin_url    String?
   apply_url       String?
+  posted_datetime String?
 
   @@map("go-sk-jobs")
 }

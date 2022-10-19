@@ -6,6 +6,7 @@ export type Job = {
   job_description: string | null;
   linkedin_url?: string | null;
   apply_url?: string | null;
+  posted_datetime?: string | null;
 };
 
 export type JobPostings = {

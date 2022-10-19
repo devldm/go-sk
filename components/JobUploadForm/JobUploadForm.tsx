@@ -15,12 +15,14 @@ export default function JobUploadForm() {
     job_description: "",
     apply_url: "",
     linkedin_url: "",
+    posted_datetime: "",
   };
 
   const [formState, setFormState] = useState(defaultJobForm);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    const isoDateString = new Date();
 
     const data: Job = {
       job_id: self.crypto.randomUUID(),
@@ -30,6 +32,7 @@ export default function JobUploadForm() {
       company_name: formState.company_name,
       apply_url: formState.apply_url,
       linkedin_url: formState.linkedin_url,
+      posted_datetime: isoDateString.toISOString(),
     };
 
     const response = await fetch("/api/jobs", {
