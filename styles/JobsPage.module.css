@@ -122,3 +122,11 @@
     text-align: right;
   }
 }
+
+@media (prefers-color-scheme: light) {
+  .jobDetailsContainer {
+    background-color: #e9e9e9;
+    color: #222;
+    border: 0.25px solid #30363d67;
+  }
+}
