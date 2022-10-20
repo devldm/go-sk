@@ -129,4 +129,8 @@
     color: #222;
     border: 0.25px solid #30363d67;
   }
+
+  .detailSectionHeading {
+    font-weight: normal;
+  }
 }
