@@ -20,7 +20,12 @@ export default async function handler(
         location: req.body.location,
         apply_url: req.body.apply_url,
         linkedin_url: req.body.linkedin_url,
-        posted_datetime: req.body.posted_datetime
+        posted_datetime: req.body.posted_datetime,
+        role_type: req.body.role_type,
+        experience_level: req.body.experience_level,
+        remote_level: req.body.remote_level,
+        salary_min: req.body.salary_min,
+        salary_max: req.body.salary_max,
       },
     });
 

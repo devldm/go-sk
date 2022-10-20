@@ -88,6 +88,15 @@ const Job: NextPage<JobPosting> = ({
             __html: job.job_description ?? "no content",
           }}
         />
+        <div>
+          <h3>Job Details</h3>
+          {job.role_type && <p>{job.role_type}</p>}
+          {job.experience_level && <p>{job.experience_level}</p>}
+          {job.remote_level && <p>{job.remote_level}</p>}
+          {job.salary_min && job.salary_max && (
+            <p>{`${job.salary_min} - ${job.salary_max}`}</p>
+          )}
+        </div>
         <Button applyUrl={job.apply_url ?? "No url"} buttonText={"Apply"} />
         <Link href="/jobs">
           <p className={styles.backToJobs}>Go back to Jobs</p>

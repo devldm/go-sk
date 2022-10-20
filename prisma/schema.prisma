@@ -8,14 +8,19 @@ datasource db {
 }
 
 model go_sk_jobs {
-  job_id          String  @id @db.Uuid
-  job_title       String
-  company_name    String
-  location        String
-  job_description String
-  linkedin_url    String?
-  apply_url       String?
-  posted_datetime String?
+  job_id           String  @id @db.Uuid
+  job_title        String
+  company_name     String
+  location         String
+  job_description  String
+  linkedin_url     String?
+  apply_url        String?
+  posted_datetime  String?
+  role_type        String?
+  experience_level String?
+  remote_level     String?
+  salary_min       Int?
+  salary_max       Int?
 
   @@map("go-sk-jobs")
 }

@@ -9,17 +9,33 @@
   caret-color: white;
 }
 
-.jobUploadForm label {
+.jobUploadForm label,
+.jobUploadForm fieldset label {
   margin-bottom: 10px;
   font-size: 18px;
 }
 
-.jobUploadForm input {
+.jobUploadForm input,
+.jobUploadForm select {
   margin-bottom: 20px;
   padding: 15px;
   font-size: 18px;
   border-radius: 7px;
   border: none
+}
+
+.salaryDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.salaryDivChild {
+  margin: 10px;
+}
+
+.salaryDivChild > input {
+  margin-top: 10px;
 }
 
 .submit {
