@@ -48,6 +48,37 @@
   width: max-content;
 }
 
+.jobDetailsContainer {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 7px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.jobDetailsContainer h3 {
+  margin: 10px 0px;
+  font-size: 25px;
+}
+
+.detailSectionHeading {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.jobDetail{
+  font-size: 25px;
+}
+
+.jobDetailsContainer p {
+  margin: 10px 0px;
+}
+
+.jobDetails {
+  display: flex;
+}
+
 @media (max-width: 900px) {
   .title {
     font-size: 40px;
@@ -75,5 +106,19 @@
   .jobContent {
     width: 100%;
     display: inline-block;
+  }
+  .jobDetails {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .jobDetailContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .jobDetail{
+    font-size: 20px;
+    text-align: right;
   }
 }

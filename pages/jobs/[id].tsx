@@ -88,14 +88,37 @@ const Job: NextPage<JobPosting> = ({
             __html: job.job_description ?? "no content",
           }}
         />
-        <div>
+        <div className={styles.jobDetailsContainer}>
           <h3>Job Details</h3>
-          {job.role_type && <p>{job.role_type}</p>}
-          {job.experience_level && <p>{job.experience_level}</p>}
-          {job.remote_level && <p>{job.remote_level}</p>}
-          {job.salary_min && job.salary_max && (
-            <p>{`${job.salary_min} - ${job.salary_max}`}</p>
-          )}
+          <hr />
+          <div className={styles.jobDetails}>
+            {job.role_type && (
+              <div className={styles.jobDetailContainer}>
+                <p className={styles.detailSectionHeading}>Role type</p>
+                <p className={styles.jobDetail}>{job.role_type}</p>
+              </div>
+            )}
+            {job.experience_level && (
+              <div className={styles.jobDetailContainer}>
+                <p className={styles.detailSectionHeading}>Experience level</p>
+                <p className={styles.jobDetail}>{job.experience_level}</p>
+              </div>
+            )}
+            {job.remote_level && (
+              <div className={styles.jobDetailContainer}>
+                <p className={styles.detailSectionHeading}>Remote level</p>
+                <p className={styles.jobDetail}>{job.remote_level}</p>
+              </div>
+            )}
+            {job.salary_min && job.salary_max && (
+              <div className={styles.jobDetailContainer}>
+                <p className={styles.detailSectionHeading}>Salary range</p>
+                <p
+                  className={styles.jobDetail}
+                >{`${job.salary_min} - ${job.salary_max}`}</p>
+              </div>
+            )}
+          </div>
         </div>
         <Button applyUrl={job.apply_url ?? "No url"} buttonText={"Apply"} />
         <Link href="/jobs">
