@@ -1,7 +1,9 @@
 html,
 body {
+  caret-color: transparent;
   padding: 0;
   margin: 0;
+  width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -13,14 +15,28 @@ a {
 
 * {
   box-sizing: border-box;
+  width: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+
   body {
-    color: white;
-    background: black;
+    color: #f0f6fc;
+    background: #121212;
+    /*background: black;*/
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    color: rgb(0, 0, 0);
+    background-color: #fff;
   }
 }

@@ -1,0 +1,95 @@
+.jobUploadForm {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  background-color: #222;
+  padding: 40px;
+  border-radius: 10px;
+  caret-color: white;
+}
+
+.jobUploadForm label,
+.jobUploadForm fieldset label {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.jobUploadForm input,
+.jobUploadForm select {
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 7px;
+  border: none
+}
+
+.salaryDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.salaryDivChild {
+  margin: 10px 5px;
+}
+
+.salaryDivChild > input,
+.salaryDivChild > select {
+  margin-top: 10px;
+}
+
+.salaryDivChild input {
+  width: max-content;
+}
+
+.salaryDivChild select{
+  width: min-content;
+}
+
+.submit {
+  margin-top: 20px;
+  max-width: 50%;
+  cursor: pointer;
+  background-color: #3758f9;
+  width: 100%;
+  padding: 15px;
+  border-radius: 7px;
+  font-size: 25px;
+  border: none;
+}
+
+@media (max-width: 900px) {
+  .jobUploadForm {}
+}
+
+@media (max-width: 768px) {
+  .jobUploadForm {
+    width: 100vw;
+    background-color: #121212;
+    padding: 0;
+  }
+
+  .submit {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .jobUploadForm {
+    width: 100%;
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .jobUploadForm {
+    background-color: #121212;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .jobUploadForm {
+    background-color: #e9ecef;
+  }
+}
