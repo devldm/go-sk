@@ -5,6 +5,7 @@ import Layout from "../../components/Layout/Layout";
 import Link from "next/link";
 import Button from "../../components/Button/Button";
 import { getTimeSincePosting } from "../../utils/getTimeSincePosting";
+import JobDetails from "../../components/JobDetails/JobDetails";
 
 export async function getStaticProps({ params }: any) {
   const job: any = await prisma.go_sk_jobs.findUnique({
@@ -64,40 +65,7 @@ const Job: NextPage<JobPosting> = ({
             __html: job.job_description ?? "no content",
           }}
         />
-        <div className={styles.jobDetailsContainer}>
-          <h3>Job Details</h3>
-          <hr />
-          <div className={styles.jobDetails}>
-            {job.role_type && (
-              <div className={styles.jobDetailContainer}>
-                <p className={styles.detailSectionHeading}>Role type</p>
-                <p className={styles.jobDetail}>{job.role_type}</p>
-              </div>
-            )}
-            {job.experience_level && (
-              <div className={styles.jobDetailContainer}>
-                <p className={styles.detailSectionHeading}>Experience level</p>
-                <p className={styles.jobDetail}>{job.experience_level}</p>
-              </div>
-            )}
-            {job.remote_level && (
-              <div className={styles.jobDetailContainer}>
-                <p className={styles.detailSectionHeading}>Remote level</p>
-                <p className={styles.jobDetail}>{job.remote_level}</p>
-              </div>
-            )}
-            {job.salary_min > 0 && job.salary_max > 0 && (
-              <div className={styles.jobDetailContainer}>
-                <p className={styles.detailSectionHeading}>
-                  Salary range {job.currency && `(${job.currency})`}
-                </p>
-                <p
-                  className={styles.jobDetail}
-                >{`${job.salary_min} - ${job.salary_max}`}</p>
-              </div>
-            )}
-          </div>
-        </div>
+        <JobDetails job={job} />
         <Button applyUrl={job.apply_url ?? "No url"} buttonText={"Apply"} />
         <Link href="/jobs">
           <p className={styles.backToJobs}>Go back to Jobs</p>

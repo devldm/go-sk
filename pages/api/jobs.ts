@@ -1,4 +1,3 @@
-//import { jobs } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../db";
 import { Job } from "../../types";

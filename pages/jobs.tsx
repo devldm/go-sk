@@ -31,8 +31,8 @@ const Jobs: NextPage<JobPostings> = ({
         <div className={styles.jobContent}>
           <h1 className={styles.title}>Jobs</h1>
           <p className={styles.paragraph}>
-            We partner with firms to get the best roles for software engineers
-            looking to relocate to Seoul.{" "}
+            We partner with firms to get the best roles for people looking to
+            relocate to Seoul.{" "}
           </p>
           <div className={styles.jobs}>
             {jobs && (
