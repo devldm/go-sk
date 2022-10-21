@@ -31,11 +31,20 @@
 }
 
 .salaryDivChild {
-  margin: 10px;
+  margin: 10px 5px;
 }
 
-.salaryDivChild > input {
+.salaryDivChild > input,
+.salaryDivChild > select {
   margin-top: 10px;
+}
+
+.salaryDivChild input {
+  width: max-content;
+}
+
+.salaryDivChild select{
+  width: min-content;
 }
 
 .submit {

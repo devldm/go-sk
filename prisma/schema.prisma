@@ -21,6 +21,7 @@ model go_sk_jobs {
   remote_level     String?
   salary_min       Int?
   salary_max       Int?
+  currency         String? @default("")
 
   @@map("go-sk-jobs")
 }

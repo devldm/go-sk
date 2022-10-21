@@ -1,12 +1,25 @@
 .jobPostContainer {
-  border-radius: 10px;
-  margin-bottom: 15px;
+  border-radius: 10px 10px 0px 0px;
   padding: 10px;
-  border: 0.25px solid #30363d67;
-  height: 100px;
+  height: max-content;
 }
 
-.jobPostContainer:hover {
+.moreDetails {
+  display: flex;
+  width: 100%;
+}
+
+.extraDeets {
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #30363d67;
+}
+
+.detailPillContainer {
+  display: flex;
+}
+
+.extraDeets:hover {
   box-shadow: 0px 0px 3px #3758f9;
 }
 
@@ -23,9 +36,12 @@
 }
 
 .companyName {
-  text-align: end;
+  text-align: start;
 }
 
+.posted {
+  text-align: end;
+}
 .jobLocation {
   margin: 0;
   font-style: italic;
@@ -36,27 +52,26 @@
     width: 100%;
   }
 
-  .titleLocation {
-    width: 80%;
+  .moreDetails {
+    width: 100%;
   }
 
   .jobDescription {
     margin: 5px 0px;
   }
 
-  .companyName {
-    width: 40%;
+  .titleLocation {
   }
 
   .jobTitle {
-    font-size: 30px;
-    width: auto;
+    width: max-content;
+    font-size: 25px;
   }
 }
 
 @media (max-width: 600px) {
   .jobTitle {
-    font-size: 25px;
+    font-size: 20px;
     width: auto;
   }
 }
@@ -75,6 +90,6 @@
 @media (prefers-color-scheme: light) {
   .jobPostContainer {
     color: #222;
-    background:  #e9e9e9;
+    background: #e9e9e9;
   }
 }

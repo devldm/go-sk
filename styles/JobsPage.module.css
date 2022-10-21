@@ -34,13 +34,18 @@
 }
 
 .companyName {
-  margin-bottom: 0;
+  width: max-content;
+}
+
+.nameAndButton p {
+  width: max-content;
 }
 
 .nameAndButton {
   margin-top: 10px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nameAndButton a {
@@ -65,10 +70,12 @@
 .detailSectionHeading {
   font-size: 16px;
   font-weight: lighter;
+  min-width: max-content;
 }
 
 .jobDetail{
   font-size: 25px;
+  min-width: max-content;
 }
 
 .jobDetailsContainer p {
@@ -102,6 +109,10 @@
 }
 
 @media (max-width: 600px) {
+.title{
+  font-size: 30px;
+}
+
 
   .jobContent {
     width: 100%;

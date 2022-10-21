@@ -3,9 +3,8 @@ import styles from "../../styles/JobsPage.module.css";
 import prisma from "../../db";
 import Layout from "../../components/Layout/Layout";
 import Link from "next/link";
-import LinkedInIcon from "../../components/SocialIcons/LinkedInIcon";
 import Button from "../../components/Button/Button";
-import { DateTime } from "luxon";
+import { getTimeSincePosting } from "../../utils/getTimeSincePosting";
 
 export async function getStaticProps({ params }: any) {
   const job: any = await prisma.go_sk_jobs.findUnique({
@@ -46,29 +45,6 @@ type JobPosting = {
 const Job: NextPage<JobPosting> = ({
   job,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  function getTimeSincePosting(dateTime: string) {
-    var end = DateTime.now();
-    var start = DateTime.fromISO(dateTime);
-
-    var diffInMonths = end.diff(start, "months").toObject().months;
-    var diffInDays = end.diff(start, "days").toObject().days;
-
-    var diffMonths = Math.floor(diffInMonths!);
-    var diffDays = Math.ceil(diffInDays!);
-
-    if (diffDays < 2) {
-      return <p>Posted today</p>;
-    } else if (diffDays >= 2 && diffMonths < 1) {
-      return <p>{`Posted ${diffDays} day's ago`}</p>;
-    } else if (diffMonths < 2 && diffMonths >= 1) {
-      return <p>Posted {diffMonths} month ago</p>;
-    } else if (diffMonths > 1 && diffMonths <= 12) {
-      return <p>{`Posted ${diffMonths} month's ago`}</p>;
-    } else {
-      return <p>Posted over a year ago</p>;
-    }
-  }
-
   return (
     <Layout pageTitle={"Job details"}>
       <div className={styles.jobsWrapper}>
@@ -77,7 +53,7 @@ const Job: NextPage<JobPosting> = ({
         <div className={styles.nameAndButton}>
           <p className={styles.companyName}>{job.company_name}</p>
           {job.posted_datetime && (
-            <div>{getTimeSincePosting(job.posted_datetime)}</div>
+            <p>{getTimeSincePosting(job.posted_datetime)}</p>
           )}
           <Button applyUrl={job.apply_url ?? "no url"} buttonText={"Apply"} />
         </div>
@@ -110,9 +86,11 @@ const Job: NextPage<JobPosting> = ({
                 <p className={styles.jobDetail}>{job.remote_level}</p>
               </div>
             )}
-            {job.salary_min && job.salary_max && (
+            {job.salary_min > 0 && job.salary_max > 0 && (
               <div className={styles.jobDetailContainer}>
-                <p className={styles.detailSectionHeading}>Salary range</p>
+                <p className={styles.detailSectionHeading}>
+                  Salary range {job.currency && `(${job.currency})`}
+                </p>
                 <p
                   className={styles.jobDetail}
                 >{`${job.salary_min} - ${job.salary_max}`}</p>

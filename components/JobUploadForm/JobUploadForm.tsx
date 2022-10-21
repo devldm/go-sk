@@ -5,6 +5,7 @@ const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.snow.css";
 import DOMPurify from "dompurify";
 import { Job } from "../../types";
+import FormInput from "../FormInput/FormInput";
 
 export default function JobUploadForm() {
   const defaultJobForm: Job = {
@@ -21,6 +22,7 @@ export default function JobUploadForm() {
     remote_level: "",
     salary_min: 0,
     salary_max: 0,
+    currency: "",
   };
 
   const [formState, setFormState] = useState(defaultJobForm);
@@ -43,6 +45,7 @@ export default function JobUploadForm() {
       remote_level: formState.remote_level,
       salary_min: formState.salary_min,
       salary_max: formState.salary_max,
+      currency: formState.currency,
     };
 
     const response = await fetch("/api/jobs", {
@@ -83,17 +86,14 @@ export default function JobUploadForm() {
     ],
   };
 
-  // TODO: ensrure back ground shows as expected on desktop if we go with that design
-
   return (
     <div>
       <form onSubmit={handleSubmit} className={styles.jobUploadForm}>
-        <label htmlFor="jobTitle">Job title:</label>
-        <input
-          required
-          type="text"
-          id="jobTitle"
-          name="jobTitle"
+        <FormInput
+          type={"text"}
+          labelText={"Job title:"}
+          required={true}
+          id={"jobTitle"}
           onChange={(e) =>
             setFormState({
               ...formState,
@@ -101,11 +101,11 @@ export default function JobUploadForm() {
             })
           }
         />
-        <label htmlFor="companyName">Company name:</label>
-        <input
-          type="text"
-          id="companyName"
-          name="companyName"
+        <FormInput
+          type={"text"}
+          labelText={"Company name:"}
+          required={true}
+          id={"companyName"}
           onChange={(e) =>
             setFormState({
               ...formState,
@@ -113,12 +113,11 @@ export default function JobUploadForm() {
             })
           }
         />
-        <label htmlFor="location">Location:</label>
-        <input
-          required
-          type="text"
-          id="location"
-          name="location"
+        <FormInput
+          type={"text"}
+          labelText={"Location:"}
+          required={true}
+          id={"location"}
           onChange={(e) =>
             setFormState({
               ...formState,
@@ -126,12 +125,11 @@ export default function JobUploadForm() {
             })
           }
         />
-        <label htmlFor="applyUrl">Job Posting Url:</label>
-        <input
-          required
-          type="text"
-          id="applyurl"
-          name="applyurl"
+        <FormInput
+          type={"text"}
+          labelText={"Job Posting Url:"}
+          required={true}
+          id={"applyurl"}
           onChange={(e) =>
             setFormState({
               ...formState,
@@ -139,12 +137,11 @@ export default function JobUploadForm() {
             })
           }
         />
-        <label htmlFor="linkedinUrl">Company LinkedIn Url:</label>
-        <input
-          required
-          type="text"
-          id="linkedinUrl"
-          name="linkedinUrl"
+        <FormInput
+          type={"text"}
+          labelText={"Company LinkedIn Url:"}
+          required={true}
+          id={"linkedinUrl"}
           onChange={(e) =>
             setFormState({
               ...formState,
@@ -208,6 +205,27 @@ export default function JobUploadForm() {
           <option value="On-Site">On-Site</option>
         </select>
         <div className={styles.salaryDiv}>
+          <div className={styles.salaryDivChild}>
+            <label htmlFor="currency">Currency:</label>
+            <select
+              id="currency"
+              name="currency"
+              onChange={(e) =>
+                setFormState({
+                  ...formState,
+                  currency: e.target.value,
+                })
+              }
+            >
+              <option value="" disabled selected>
+                Currency:
+              </option>
+              <option value="KRW">KRW</option>
+              <option value="USD">USD</option>
+              <option value="GBP">GBP</option>
+              <option value="EUR">EUR</option>
+            </select>
+          </div>
           <div className={styles.salaryDivChild}>
             <label htmlFor="min">Minimum Salary:</label>
             <input
