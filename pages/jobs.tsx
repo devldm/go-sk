@@ -54,8 +54,8 @@ const Jobs: NextPage<JobPostings> = ({
                   more roles for you!
                 </h2>
                 <p>
-                  If you work for an South Korean company and would like to
-                  advertise your roles here please submit it here.
+                  If you work for a South Korean company and would like to
+                  advertise your roles here please submit it below.
                 </p>
                 <Link href="/jobUpload">
                   <a href="">
