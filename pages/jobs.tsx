@@ -6,6 +6,7 @@ import prisma from "../db";
 import JobPreview from "../components/JobPreview/JobPreview";
 import Link from "next/link";
 import { Job, JobPostings } from "../types";
+import Button from "../components/Button/Button";
 
 export async function getStaticProps() {
   const jobs: Job[] = await prisma.go_sk_jobs.findMany();
@@ -46,10 +47,26 @@ const Jobs: NextPage<JobPostings> = ({
                 ))}
               </>
             )}
+            {jobs.length === 0 && (
+              <>
+                <h2>
+                  No jobs are available right now. We are busy trying to get
+                  more roles for you!
+                </h2>
+                <p>
+                  If you work for a South Korean company and would like to
+                  advertise your roles here please submit it below.
+                </p>
+                <Link href="/jobUpload">
+                  <a href="">
+                    <Button buttonText="Upload a role" />
+                  </a>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </main>
-      {/* <Footer /> */}
     </div>
   );
 };
