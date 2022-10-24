@@ -4,7 +4,6 @@
   margin: 0 auto;
   align-items: center;
   background-color: #222;
-  padding: 40px;
   border-radius: 10px;
   caret-color: white;
 }
@@ -21,7 +20,7 @@
   padding: 15px;
   font-size: 18px;
   border-radius: 7px;
-  border: none
+  border: 1px solid #121212
 }
 
 .salaryDiv {
@@ -46,9 +45,6 @@
   width: max-content;
 }
 
-.salaryDivChild select{
-  width: min-content;
-}
 
 .submit {
   margin-top: 20px;
@@ -122,6 +118,6 @@
 
 @media (prefers-color-scheme: light) {
   .jobUploadForm {
-    background-color: #e9ecef;
+    background-color: #fff;
   }
 }

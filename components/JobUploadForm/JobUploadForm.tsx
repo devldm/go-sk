@@ -6,6 +6,7 @@ import "react-quill/dist/quill.snow.css";
 import DOMPurify from "dompurify";
 import { Job } from "../../types";
 import FormInput from "../FormInput/FormInput";
+import JobPreview from "../JobPreview/JobPreview";
 
 export default function JobUploadForm() {
   const defaultJobForm: Job = {
@@ -272,6 +273,17 @@ export default function JobUploadForm() {
           Submit
         </button>
       </form>
+      <h1>Preview your role</h1>
+      <p>
+        Start filling out the form to see what your listing will look like on
+        our jobs list.
+      </p>
+      {(formState.job_title ||
+        formState.company_name ||
+        formState.location ||
+        formState.experience_level ||
+        formState.remote_level ||
+        formState.role_type) && <JobPreview jobProps={formState} />}
     </div>
   );
 }
