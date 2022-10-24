@@ -20,7 +20,7 @@
   padding: 15px;
   font-size: 18px;
   border-radius: 7px;
-  border: none
+  border: 1px solid #121212
 }
 
 .salaryDiv {
@@ -118,6 +118,6 @@
 
 @media (prefers-color-scheme: light) {
   .jobUploadForm {
-    background-color: #e9ecef;
+    background-color: #fff;
   }
 }
