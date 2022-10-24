@@ -1,6 +1,5 @@
 import React from "react";
-import { Job } from "../../types";
-import styles from "./DetailsPill.module.css";
+import styles from "./FormInput.module.css";
 
 interface Props {
   type?: string;
@@ -19,7 +18,9 @@ export default function FormInput({
 }: Props) {
   return (
     <>
-      <label htmlFor={id}>{labelText}</label>
+      <label htmlFor={id} className={required == true ? styles.required : ""}>
+        {labelText}
+      </label>
       <input
         type={type}
         required={required}

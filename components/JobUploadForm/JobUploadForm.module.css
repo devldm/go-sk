@@ -4,7 +4,6 @@
   margin: 0 auto;
   align-items: center;
   background-color: #222;
-  padding: 40px;
   border-radius: 10px;
   caret-color: white;
 }
@@ -46,9 +45,6 @@
   width: max-content;
 }
 
-.salaryDivChild select{
-  width: min-content;
-}
 
 .submit {
   margin-top: 20px;
