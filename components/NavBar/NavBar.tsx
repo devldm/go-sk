@@ -23,7 +23,9 @@ export default function NavBar() {
             </div>
           </Link>
           <Link href="/jobUpload">
-            <Button buttonText="Upload a role" className={styles.navButton} />
+            <a href="">
+              <Button buttonText="Upload a role" className={styles.navButton} />
+            </a>
           </Link>
         </div>
       </div>
