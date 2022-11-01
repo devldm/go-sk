@@ -3,7 +3,6 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import NavBar from "../components/NavBar/NavBar";
 import HeroHome from "../components/HeroHome/HeroHome";
-import Footer from "../components/Footer/Footer";
 
 const Home: NextPage = () => {
   return (

@@ -9,7 +9,11 @@ export default function NavBar() {
     <div className={styles.navBox}>
       <div className={styles.navFlex}>
         <div className={styles.logo}>
-          <Image src={skFlag} className={styles.logoSvg} />
+          <Image
+            src={skFlag}
+            className={styles.logoSvg}
+            alt="go-sk logo. svg of South Korean flag and the text go-sk"
+          />
           <Link href="/">
             <a>
               <h2 className={styles.logoText}>GO-SK</h2>
