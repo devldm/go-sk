@@ -25,7 +25,12 @@ export default function HeroHome() {
         </Link>
       </div>
       <div className={styles.heroImage}>
-        <Image src={skImage} className={styles.landingImage} priority />
+        <Image
+          src={skImage}
+          className={styles.landingImage}
+          priority
+          alt="View of N Seoul Tower"
+        />
       </div>
     </div>
   );
