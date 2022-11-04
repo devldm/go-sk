@@ -49,7 +49,7 @@ export default function JobUploadForm() {
       currency: formState.currency,
     };
 
-    const response = await fetch("/api/jobs", {
+    const response = await fetch("/api/postJob", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
