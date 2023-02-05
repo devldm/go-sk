@@ -31,10 +31,12 @@ const Jobs: NextPage<JobPostings> = ({
       <main className={styles.main}>
         <div className={styles.jobContent}>
           <h1 className={styles.title}>Jobs</h1>
-          <p className={styles.paragraph}>
-            We partner with firms to get the best roles for people looking to
-            relocate to Seoul.{" "}
-          </p>
+          {!jobs && (
+            <p className={styles.paragraph}>
+              We partner with firms to get the best roles for people looking to
+              relocate to Seoul.{" "}
+            </p>
+          )}
           <div className={styles.jobs}>
             {jobs && (
               <>
@@ -49,13 +51,13 @@ const Jobs: NextPage<JobPostings> = ({
             )}
             {jobs.length === 0 && (
               <>
-                <h2>
+                <h2 className={styles.noJobsPara}>
                   No jobs are available right now. We are busy trying to get
                   more roles for you!
                 </h2>
-                <p>
-                  If you work for a South Korean company and would like to
-                  advertise your roles here please submit it below.
+                <p className={styles.noJobsCallToAction}>
+                  Work for a South Korean company? <br></br>Advertise your roles
+                  by submitting below!
                 </p>
                 <Link href="/jobUpload">
                   <a href="">

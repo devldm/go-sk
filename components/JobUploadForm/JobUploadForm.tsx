@@ -273,8 +273,8 @@ export default function JobUploadForm() {
           Submit
         </button>
       </form>
-      <h1>Preview your role</h1>
-      <p>
+      <h1 className={styles.previewTitle}>Preview your role</h1>
+      <p className={styles.previewCopy}>
         Start filling out the form to see what your listing will look like on
         our jobs list.
       </p>

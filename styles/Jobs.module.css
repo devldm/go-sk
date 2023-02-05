@@ -35,7 +35,7 @@
 .title {
   text-align: left;
   width: 60%;
-  font-size: 45px;
+  font-size: 55px;
 }
 
 .paragraph {
@@ -43,6 +43,15 @@
   text-align: left;
   margin-top: 0;
   margin-bottom: 30px;
+  font-size: 25px;
+}
+
+.noJobsPara {
+  font-size: 35px
+}
+
+.noJobsCallToAction {
+  font-size: 25px;
 }
 
 

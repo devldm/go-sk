@@ -98,6 +98,10 @@
   }
 }
 
+.previewTitle {
+  font-size: 40px;
+}
+
 @media (max-width: 600px) {
   .jobUploadForm {
     width: 100%;
