@@ -5,7 +5,7 @@ I am looking for a role in korea so i started a side-project with the aim of hel
 ## Aim
 create a place where companies can host job postings and users can find roles.
 
-## outcome
+## Outcome
 This was fully finished in an MVP state as it allowed for posting jobs, viewing roles and applying (link out to an external posting)
 
 ## Current state
