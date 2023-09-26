@@ -9,7 +9,7 @@ create a place where companies can host job postings and users can find roles.
 This was fully finished in an MVP state as it allowed for posting jobs, viewing roles and applying (link out to an external posting)
 
 ## Current state
-This project currently still functions but the database is no longer in operation due to a change in the hosting providers pricing scheme. 
+This project currently still functions and has a test role in place to show its functionality. I'd like to return to it when i get time to polish its styling and add features
 
 ## App Repo
 You can find the app version [here](https://www.github.com/devldm/go-sk-app)
