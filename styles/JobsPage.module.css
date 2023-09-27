@@ -65,6 +65,7 @@
 @media (max-width: 900px) {
   .title {
     font-size: 40px;
+    margin-top: 0px;
   }
 
   .location {
