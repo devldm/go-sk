@@ -7,9 +7,15 @@ interface Props {
 }
 
 export default function Button({ applyUrl, className, buttonText }: Props) {
+  console.log(applyUrl);
   return (
-    <a target="_blank" rel="noreferrer" href={applyUrl}>
-      <button className={`${styles.button} ${className}`}>{buttonText}</button>
+    <a target="_blank" rel="noreferrer" href={`https://${applyUrl}`}>
+      <button
+        className={`${styles.button} ${className}`}
+        onClick={() => console.log(applyUrl)}
+      >
+        {buttonText}
+      </button>
     </a>
   );
 }

@@ -56,7 +56,7 @@ const Job: NextPage<JobPosting> = ({
           {job.posted_datetime && (
             <p>{getTimeSincePosting(job.posted_datetime)}</p>
           )}
-          <Button applyUrl={job.apply_url ?? "no url"} buttonText={"Apply"} />
+          <Button applyUrl={job.apply_url ?? "No url"} buttonText={"Apply"} />
         </div>
         <hr />
         <div
