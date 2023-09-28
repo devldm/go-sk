@@ -7,7 +7,6 @@ interface Props {
 }
 
 export default function Button({ applyUrl, className, buttonText }: Props) {
-  console.log(applyUrl);
   return (
     <a target="_blank" rel="noreferrer" href={`https://${applyUrl}`}>
       <button

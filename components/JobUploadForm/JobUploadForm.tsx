@@ -60,7 +60,7 @@ export default function JobUploadForm() {
     if (response.ok) {
       alert("Job submitted successfully! It'll be on the jobs page soon.");
     } else {
-      alert("Job post failed. Please try again laters");
+      alert("Job post failed. Please try again later.");
     }
   };
 

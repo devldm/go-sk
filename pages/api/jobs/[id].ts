@@ -10,8 +10,7 @@ export default async function handler(
     return res.status(405).json({ message: "Method not allowed" });
   }
   try {
-    console.log(req.query);
-    const job: any = await prisma.go_sk_jobs.findUnique({
+    const job: Job | null = await prisma.go_sk_jobs.findUnique({
       where: {
         job_id: req.query.id?.toString(),
       },
