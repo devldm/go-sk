@@ -15,21 +15,13 @@ export default function NavBar() {
             alt="go-sk logo. svg of South Korean flag and the text go-sk"
           />
           <Link href="/">
-            <a>
-              <h2 className={styles.logoText}>GO-SK</h2>
-            </a>
+            <h2 className={styles.logoText}>GO-SK</h2>
           </Link>
         </div>
         <div className={styles.linkFlex}>
-          <Link href="/jobs">
-            <div className={styles.navItemsContainer}>
-              <a className={styles.link}>Jobs</a>
-            </div>
-          </Link>
+          <Link href="/jobs">Jobs</Link>
           <Link href="/jobUpload">
-            <a href="">
-              <Button buttonText="Upload a role" className={styles.navButton} />
-            </a>
+            <Button buttonText="Upload a role" className={styles.navButton} />
           </Link>
         </div>
       </div>

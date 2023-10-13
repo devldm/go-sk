@@ -1,3 +1,4 @@
+import { redirect } from "next/dist/server/api-utils";
 import styles from "./Button.module.css";
 
 interface Props {
@@ -8,13 +9,11 @@ interface Props {
 
 export default function Button({ applyUrl, className, buttonText }: Props) {
   return (
-    <a target="_blank" rel="noreferrer" href={`https://${applyUrl}`}>
-      <button
-        className={`${styles.button} ${className}`}
-        onClick={() => console.log(applyUrl)}
-      >
-        {buttonText}
-      </button>
-    </a>
+    <button
+      className={`${styles.button} ${className}`}
+      onClick={() => console.log(applyUrl)}
+    >
+      <a href={`https://${applyUrl}`}>{buttonText}</a>
+    </button>
   );
 }

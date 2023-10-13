@@ -1,21 +1,16 @@
 .button {
     padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
     background-color: #3758f9;
     border-radius: 7px;
     color: white;
     border: none;
     cursor: pointer;
+    max-width: fit-content;
 }
 
 .button:hover {
     box-shadow: 0px 0px 4px #fff;
 
-}
-
-
-
-@media (max-width: 600px) {
-    .button {
-        max-width: 100%;
-    }
 }

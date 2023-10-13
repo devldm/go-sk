@@ -15,17 +15,12 @@
 .linkFlex {
   display: flex;
   font-size: 25px;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
 }
 
-.linkFlex a:last-child {
+.linkFlex Link:last-child {
   width: max-content;
-}
-
-.navItemsContainer {
-  width: 50%;
-  justify-self: flex-start;
 }
 
 .link {
@@ -37,8 +32,8 @@
   cursor: pointer;
 }
 
-.logoSvg svg {
-  width: max-content;
+.logoSvg {
+  max-width: min-content;
 }
 
 .navButton {
@@ -48,9 +43,10 @@
 .logo {
   display: flex;
   flex-shrink: 2;
+  align-items: center;
 }
 
-.logo a:last-child {
+.logo Link:last-child {
   width: max-content;
 }
 

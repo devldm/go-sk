@@ -42,9 +42,7 @@ const Jobs: NextPage<JobPostings> = ({
               <>
                 {jobs.map((job: any) => (
                   <Link href={`jobs/${job.job_id}`} key={job.job_id} passHref>
-                    <a>
-                      <JobPreview jobProps={job} key={job.job_id} />
-                    </a>
+                    <JobPreview jobProps={job} key={job.job_id} />
                   </Link>
                 ))}
               </>
@@ -60,9 +58,7 @@ const Jobs: NextPage<JobPostings> = ({
                   by submitting below!
                 </p>
                 <Link href="/jobUpload">
-                  <a href="">
-                    <Button buttonText="Upload a role" />
-                  </a>
+                  <Button buttonText="Upload a role" />
                 </Link>
               </>
             )}
