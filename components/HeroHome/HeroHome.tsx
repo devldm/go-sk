@@ -19,7 +19,7 @@ export default function HeroHome() {
         </p>
 
         <Link href="/jobs">
-          <Button buttonText="See our jobs" className={styles.jobsCta} />
+          <Button buttonText="See our jobs" customClassName={styles.jobsCta} />
         </Link>
       </div>
       <div className={styles.heroImage}>
