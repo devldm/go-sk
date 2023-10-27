@@ -1,5 +1,4 @@
 import type { InferGetStaticPropsType, NextPage } from "next";
-import styles from "../../styles/JobsPage.module.css";
 import prisma from "../../db";
 import Layout from "../../components/Layout/Layout";
 import Link from "next/link";
@@ -48,14 +47,16 @@ const Job: NextPage<JobPosting> = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout pageTitle={"Job details"}>
-      <div className="flex gap-4 justify-center flex-col p-5 md:w-[80%] md:flex-row pt-10">
+      <div className="flex gap-4 justify-center m-auto flex-col p-5 lg:w-[80%] lg:flex-row pt-10">
         <div className="mb-6 flex-col flex max-w-max">
           <h1 className="md:mt-4 text-4xl font-bold ">{job.job_title}</h1>
-          <p className={styles.location}>{job.location}</p>
-          <div className={styles.nameAndButton}>
-            <p className={styles.companyName}>{job.company_name}</p>
+          <p className="">{job.location}</p>
+          <div className="flex items-center justify-between text-lg mt-2 w-full">
+            <p className="w-max">{job.company_name}</p>
             {job.posted_datetime && (
-              <p>{getTimeSincePosting(job.posted_datetime)}</p>
+              <p className="w-max">
+                {getTimeSincePosting(job.posted_datetime)}
+              </p>
             )}
           </div>
           <div
@@ -74,7 +75,9 @@ const Job: NextPage<JobPosting> = ({
             customClassName="w-[100%] min-w-full"
           />
           <Link href="/jobs">
-            <p className={styles.backToJobs}>Go back to Jobs</p>
+            <p className="text-[#3758f9] font-bold text-right text-xl cursor-pointer mt-3 mb-5 block">
+              Go back to Jobs
+            </p>
           </Link>
         </div>
       </div>

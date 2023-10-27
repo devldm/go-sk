@@ -1,7 +1,6 @@
 import { Job } from "../../types";
 import { getTimeSincePosting } from "../../utils/getTimeSincePosting";
 import DetailsPill from "../detailsPill/DetailsPill";
-import styles from "./JobPreview.module.css";
 
 interface Props {
   jobProps?: Job;
@@ -9,23 +8,21 @@ interface Props {
 
 export default function JobPreview({ jobProps }: Props) {
   return (
-    <div className={styles.extraDeets}>
-      <div className={styles.jobPostContainer}>
-        <div className={styles.headingFlex}>
-          <div className={styles.titleLocation}>
-            <h1 className={styles.jobTitle}>{jobProps?.job_title}</h1>
-            <p className={styles.jobLocation}>{jobProps?.location}</p>
-          </div>
+    <div className="border-4 border-[#30363d67] rounded-xl hover:shadow-[#3758f9] ">
+      <div className="p-3 bg-[#30363d67]">
+        <div className="">
+          <h1 className="text-2xl">{jobProps?.job_title}</h1>
+          <p className="italic">{jobProps?.location}</p>
         </div>
-        <hr />
-        <div className={styles.moreDetails}>
-          <div className={styles.companyName}>{jobProps?.company_name}</div>
-          <div className={styles.posted}>
+        {/* <hr className="py-2" /> */}
+        <div className="flex w-full justify-between mt-2">
+          <p>{jobProps?.company_name}</p>
+          <p className="text-right">
             {getTimeSincePosting(jobProps?.posted_datetime!)}
-          </div>
+          </p>
         </div>
       </div>
-      <div className={styles.detailPillContainer}>
+      <div className="flex gap-2 px-3">
         {jobProps?.remote_level && (
           <DetailsPill jobProps={jobProps?.remote_level} />
         )}

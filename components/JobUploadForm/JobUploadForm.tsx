@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styles from "./JobUploadForm.module.css";
 import dynamic from "next/dynamic";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.snow.css";
@@ -7,6 +6,7 @@ import DOMPurify from "dompurify";
 import { Job } from "../../types";
 import FormInput from "../FormInput/FormInput";
 import JobPreview from "../JobPreview/JobPreview";
+import Button from "../Button/Button";
 
 export default function JobUploadForm() {
   const defaultJobForm: Job = {
@@ -89,7 +89,10 @@ export default function JobUploadForm() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className={styles.jobUploadForm}>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col m-auto items-center caret-white text-xl"
+      >
         <FormInput
           type={"text"}
           labelText={"Job title:"}
@@ -152,6 +155,7 @@ export default function JobUploadForm() {
         />
         <label htmlFor="roleType">Role type:</label>
         <select
+          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212]"
           id="roleType"
           name="roleType"
           onChange={(e) =>
@@ -171,6 +175,7 @@ export default function JobUploadForm() {
         </select>
         <label htmlFor="jobLevel">Experience level:</label>
         <select
+          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212]"
           id="experienceLevel"
           name="experienceLevel"
           onChange={(e) =>
@@ -189,6 +194,7 @@ export default function JobUploadForm() {
         </select>
         <label htmlFor="remoteOrNot">Remote, Hybrid or On-site:</label>
         <select
+          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212]"
           id="remoteOrNot"
           name="remoteOrNot"
           onChange={(e) =>
@@ -205,10 +211,11 @@ export default function JobUploadForm() {
           <option value="Hybrid">Hybrid</option>
           <option value="On-Site">On-Site</option>
         </select>
-        <div className={styles.salaryDiv}>
-          <div className={styles.salaryDivChild}>
+        <div className="flex flex-col lg:flex-row items-center">
+          <div className="">
             <label htmlFor="currency">Currency:</label>
             <select
+              className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212]"
               id="currency"
               name="currency"
               onChange={(e) =>
@@ -227,12 +234,12 @@ export default function JobUploadForm() {
               <option value="EUR">EUR</option>
             </select>
           </div>
-          <div className={styles.salaryDivChild}>
-            <label htmlFor="min">Minimum Salary:</label>
-            <input
-              type="number"
-              id="min"
-              name="min"
+          <div className="flex flex-col justify-between">
+            <FormInput
+              type={"number"}
+              labelText={"Minimum Salary:"}
+              required={false}
+              id={"min"}
               onChange={(e) =>
                 setFormState({
                   ...formState,
@@ -241,12 +248,12 @@ export default function JobUploadForm() {
               }
             />
           </div>
-          <div className={styles.salaryDivChild}>
-            <label htmlFor="max">Maximum Salary:</label>
-            <input
-              type="number"
-              id="max"
-              name="max"
+          <div className="flex flex-col justify-between">
+            <FormInput
+              type={"number"}
+              labelText={"Maximum Salary:"}
+              required={false}
+              id={"max"}
               onChange={(e) =>
                 setFormState({
                   ...formState,
@@ -258,7 +265,7 @@ export default function JobUploadForm() {
         </div>
         <label htmlFor="jobDescription">Job description:</label>
         <ReactQuill
-          className={styles.qlEditor}
+          className=""
           theme="snow"
           modules={modules}
           onChange={(e) =>
@@ -269,21 +276,25 @@ export default function JobUploadForm() {
           }
         />
         <br />
-        <button type="submit" className={styles.submit}>
-          Submit
-        </button>
+        <Button
+          type="submit"
+          buttonText={"Submit"}
+          customClassName="lg:max-w-[50%] w-[100%]"
+        />
       </form>
-      <h1 className={styles.previewTitle}>Preview your role</h1>
-      <p className={styles.previewCopy}>
-        Start filling out the form to see what your listing will look like on
-        our jobs list.
-      </p>
-      {(formState.job_title ||
-        formState.company_name ||
-        formState.location ||
-        formState.experience_level ||
-        formState.remote_level ||
-        formState.role_type) && <JobPreview jobProps={formState} />}
+      <div className="pb-10">
+        <h1 className="text-4xl mt-6">Preview your role</h1>
+        <p className="text-xl mt-2 mb-4">
+          Start filling out the form to see what your listing will look like on
+          our jobs list.
+        </p>
+        {(formState.job_title ||
+          formState.company_name ||
+          formState.location ||
+          formState.experience_level ||
+          formState.remote_level ||
+          formState.role_type) && <JobPreview jobProps={formState} />}
+      </div>
     </div>
   );
 }

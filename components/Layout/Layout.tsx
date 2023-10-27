@@ -1,4 +1,3 @@
-import styles from "./Layout.module.css";
 import Head from "next/head";
 import Navbar from "../NavBar/NavBar";
 
@@ -16,7 +15,7 @@ export default function Layout({ children, pageTitle }: any) {
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" type="image/svg+xml" href="/sk.svg" sizes="any" />
       </Head>
-      <header className={styles.header}></header>
+      <header className="flex flex-col items-center"></header>
       <main>{children}</main>
     </>
   );

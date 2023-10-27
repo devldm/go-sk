@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./FormInput.module.css";
 
 interface Props {
   type?: string;
@@ -18,10 +17,18 @@ export default function FormInput({
 }: Props) {
   return (
     <>
-      <label htmlFor={id} className={required == true ? styles.required : ""}>
+      <label
+        htmlFor={id}
+        className={
+          required == true
+            ? `after:content-['*'] after:ml-0.5 after:text-red-500`
+            : ""
+        }
+      >
         {labelText}
       </label>
       <input
+        className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212]"
         type={type}
         required={required}
         id={id}
