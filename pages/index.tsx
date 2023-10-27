@@ -1,12 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import NavBar from "../components/NavBar/NavBar";
 import HeroHome from "../components/HeroHome/HeroHome";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>GO-SK</title>
         <meta name="description" content="South Korea Jobs" />
@@ -22,11 +21,11 @@ const Home: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
-      <main className={styles.main}>
+      <main>
         <NavBar />
         <HeroHome />
       </main>
-    </div>
+    </>
   );
 };
 

@@ -16,36 +16,34 @@ export default function JobDetails({ job }: Props) {
   return (
     <>
       {noJobDetails && (
-        <div className={styles.jobDetailsContainer}>
-          <h3>Job Details</h3>
-          <hr />
-          <div className={styles.jobDetails}>
+        <div className="bg-[#222] p-4 rounded-xl mb-5 flex flex-col">
+          <h3 className="my-3 text-2xl font-bold">Job Details</h3>
+          <hr className="mb-2" />
+          <div className={"flex gap-4 flex-col"}>
             {job.role_type && (
-              <div className={styles.jobDetailContainer}>
-                <p className={styles.detailSectionHeading}>Role type</p>
-                <p className={styles.jobDetail}>{job.role_type}</p>
+              <div className={""}>
+                <p className="font-thin min-w-max text-lg">Role type</p>
+                <p className="min-w-max text-xl">{job.role_type}</p>
               </div>
             )}
             {job.experience_level && (
-              <div className={styles.jobDetailContainer}>
-                <p className={styles.detailSectionHeading}>Experience level</p>
-                <p className={styles.jobDetail}>{job.experience_level}</p>
+              <div className={""}>
+                <p className="font-thin min-w-max text-lg">Experience level</p>
+                <p className="min-w-max text-xl">{job.experience_level}</p>
               </div>
             )}
             {job.remote_level && (
-              <div className={styles.jobDetailContainer}>
-                <p className={styles.detailSectionHeading}>Remote level</p>
-                <p className={styles.jobDetail}>{job.remote_level}</p>
+              <div className={""}>
+                <p className="font-thin min-w-max text-lg">Remote level</p>
+                <p className="min-w-max text-xl">{job.remote_level}</p>
               </div>
             )}
             {job.salary_min! > 0 && job.salary_max! > 0 && (
-              <div className={styles.jobDetailContainer}>
-                <p className={styles.detailSectionHeading}>
+              <div className={""}>
+                <p className="font-thin min-w-max text-lg">
                   Salary range {job.currency && `(${job.currency})`}
                 </p>
-                <p
-                  className={styles.jobDetail}
-                >{`${job.salary_min} - ${job.salary_max}`}</p>
+                <p className="min-w-max text-xl">{`${job.salary_min} - ${job.salary_max}`}</p>
               </div>
             )}
           </div>
