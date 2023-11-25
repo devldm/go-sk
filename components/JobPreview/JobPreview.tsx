@@ -10,7 +10,6 @@ export default function JobPreview({ jobProps }: { jobProps: Job }) {
           <h1 className="text-2xl">{jobProps?.job_title}</h1>
           <p className="italic">{jobProps?.location}</p>
         </div>
-        {/* <hr className="py-2" /> */}
         <div className="flex w-full justify-between mt-2">
           <p>{jobProps?.company_name}</p>
           <p className="text-right">

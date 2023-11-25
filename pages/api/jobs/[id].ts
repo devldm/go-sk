@@ -16,9 +16,7 @@ export default async function handler(
       },
     });
 
-    return res.status(200).send({
-      props: { job },
-    });
+    return res.status(200).send(job);
   } catch (err) {
     return res.status(500).send("Server error");
   }

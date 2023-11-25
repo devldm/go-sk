@@ -11,10 +11,9 @@ export default async function handler(
   }
   try {
     const jobs: Job[] = await prisma.go_sk_jobs.findMany();
+    console.log("fetch");
 
-    return res.status(200).send({
-      props: { jobs },
-    });
+    return res.status(200).send(jobs);
   } catch (err) {
     return res.status(500).send("Server error");
   }
