@@ -1,8 +1,6 @@
 import type { InferGetStaticPropsType, NextPage } from "next";
 import prisma from "../../db";
 import Layout from "../../components/Layout/Layout";
-import Link from "next/link";
-import Button from "../../components/Button/Button";
 import { getTimeSincePosting } from "../../utils/getTimeSincePosting";
 import JobDetails from "../../components/JobDetails/JobDetails";
 
@@ -47,7 +45,7 @@ const Job: NextPage<JobPosting> = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout pageTitle={"Job details"}>
-      <div className="flex gap-4 justify-center m-auto flex-col p-5 lg:w-[80%] lg:flex-row pt-10">
+      <div className="flex md:gap-12 justify-center m-auto flex-col p-5 lg:w-[70%] lg:flex-row pt-10">
         <div className="mb-6 flex-col flex max-w-max">
           <h1 className="md:mt-4 text-4xl font-bold ">{job.job_title}</h1>
           <p className="">{job.location}</p>
@@ -60,25 +58,15 @@ const Job: NextPage<JobPosting> = ({
             )}
           </div>
           <div
-            className="text-xl pt-10"
+            className="text-xl pt-10 break-all"
             dangerouslySetInnerHTML={{
               __html: job.job_description ?? "no content",
             }}
           />
         </div>
 
-        <div className="md:w-[25em]">
+        <div className="md:w-[30em]">
           <JobDetails job={job} />
-          <Button
-            applyUrl={job.apply_url ?? "No url"}
-            buttonText={"Apply"}
-            customClassName="w-[100%] min-w-full"
-          />
-          <Link href="/jobs">
-            <p className="text-[#3758f9] font-bold text-right text-xl cursor-pointer mt-3 mb-5 block">
-              Go back to Jobs
-            </p>
-          </Link>
         </div>
       </div>
     </Layout>
