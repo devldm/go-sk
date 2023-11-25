@@ -15,9 +15,13 @@ export default function Button({
     <button
       type={type}
       className={`px-[30px] py-[15px] bg-[#3758f9] rounded-lg text-white border-0 cursor-pointer max-w-max hover:shadow-white shadow-sm ${customClassName}`}
-      onClick={() => console.log(applyUrl)}
+      onClick={() => {
+        if (applyUrl) {
+          window.location.href = `https://${applyUrl}`;
+        }
+      }}
     >
-      <a href={`https://${applyUrl}`}>{buttonText}</a>
+      {buttonText}
     </button>
   );
 }
