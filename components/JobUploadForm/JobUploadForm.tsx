@@ -165,8 +165,8 @@ export default function JobUploadForm() {
             })
           }
         >
-          <option value="" disabled selected>
-            Type of role
+          <option value="" disabled>
+            --Type of role--
           </option>
           <option value="Internship">Internship</option>
           <option value="Contract">Contract</option>
@@ -185,8 +185,8 @@ export default function JobUploadForm() {
             })
           }
         >
-          <option value="" disabled selected>
-            Experience expected
+          <option value="" disabled>
+            --Experience expected--
           </option>
           <option value="Entry level">Entry level</option>
           <option value="Mid level">Mid level</option>
@@ -204,8 +204,8 @@ export default function JobUploadForm() {
             })
           }
         >
-          <option value="" disabled selected>
-            Remote, Hybrid or On-site
+          <option value="" disabled>
+            --Remote, Hybrid or On-site--
           </option>
           <option value="Remote">Remote</option>
           <option value="Hybrid">Hybrid</option>
@@ -225,7 +225,7 @@ export default function JobUploadForm() {
                 })
               }
             >
-              <option value="" disabled selected>
+              <option value="" disabled>
                 Currency:
               </option>
               <option value="KRW">KRW</option>
