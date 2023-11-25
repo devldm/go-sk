@@ -2,11 +2,7 @@ import { Job } from "../../types";
 import { getTimeSincePosting } from "../../utils/getTimeSincePosting";
 import DetailsPill from "../detailsPill/DetailsPill";
 
-interface Props {
-  jobProps?: Job;
-}
-
-export default function JobPreview({ jobProps }: Props) {
+export default function JobPreview({ jobProps }: { jobProps: Job }) {
   return (
     <div className="border-4 border-[#30363d67] rounded-xl hover:shadow-[#3758f9] ">
       <div className="p-3 bg-[#30363d67]">

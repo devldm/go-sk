@@ -1,6 +1,6 @@
 import React from "react";
 
-interface Props {
+interface FormInputProps {
   type?: string;
   labelText: string;
   required: boolean;
@@ -14,7 +14,7 @@ export default function FormInput({
   required,
   id,
   onChange,
-}: Props) {
+}: FormInputProps) {
   return (
     <>
       <label

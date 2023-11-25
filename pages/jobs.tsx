@@ -8,7 +8,7 @@ import { Job, JobPostings } from "../types";
 import Button from "../components/Button/Button";
 
 export async function getStaticProps() {
-  const jobs: Job[] = await prisma.go_sk_jobs.findMany();
+  const jobs: JobPostings = await prisma.go_sk_jobs.findMany();
 
   return {
     props: { jobs },
@@ -16,9 +16,11 @@ export async function getStaticProps() {
   };
 }
 
-const Jobs: NextPage<JobPostings> = ({
+const Jobs: React.FC<{ jobs: JobPostings }> = ({
   jobs,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+}: {
+  jobs: JobPostings;
+}) => {
   return (
     <div>
       <Head>
@@ -40,7 +42,7 @@ const Jobs: NextPage<JobPostings> = ({
               <>
                 {jobs.map((job: Job) => (
                   <Link href={`jobs/${job.job_id}`} key={job.job_id} passHref>
-                    <JobPreview jobProps={job} key={job.job_id} />
+                    <JobPreview jobProps={job} />
                   </Link>
                 ))}
               </>

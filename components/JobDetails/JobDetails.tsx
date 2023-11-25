@@ -2,11 +2,7 @@ import Link from "next/link";
 import { Job } from "../../types";
 import Button from "../Button/Button";
 
-interface Props {
-  job: Job;
-}
-
-export default function JobDetails({ job }: Props) {
+export default function JobDetails({ job }: { job: Job }) {
   const noJobDetails =
     job.role_type ||
     job.experience_level ||

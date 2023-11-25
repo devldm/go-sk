@@ -1,8 +1,10 @@
-interface Props {
+import { ButtonHTMLAttributes } from "react";
+
+interface ButtonProps {
   applyUrl?: string;
   customClassName?: string;
   buttonText: string;
-  type?: "button" | "submit" | "reset" | undefined;
+  type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
 }
 
 export default function Button({
@@ -10,7 +12,7 @@ export default function Button({
   customClassName,
   buttonText,
   type,
-}: Props) {
+}: ButtonProps) {
   return (
     <button
       type={type}

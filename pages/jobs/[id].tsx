@@ -3,9 +3,10 @@ import prisma from "../../db";
 import Layout from "../../components/Layout/Layout";
 import { getTimeSincePosting } from "../../utils/getTimeSincePosting";
 import JobDetails from "../../components/JobDetails/JobDetails";
+import { Job } from "../../types";
 
 export async function getStaticProps({ params }: any) {
-  const job: any = await prisma.go_sk_jobs.findUnique({
+  const job: Job | null = await prisma.go_sk_jobs.findUnique({
     where: {
       job_id: params.id,
     },
@@ -36,13 +37,7 @@ type JobId = {
   job_id: string;
 };
 
-type JobPosting = {
-  job: typeof Job;
-};
-
-const Job: NextPage<JobPosting> = ({
-  job,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const JobPage: React.FC<{ job: Job }> = ({ job }: { job: Job }) => {
   return (
     <Layout pageTitle={"Job details"}>
       <div className="flex md:gap-12 justify-center m-auto flex-col p-5 lg:w-[70%] lg:flex-row pt-10">
@@ -72,5 +67,4 @@ const Job: NextPage<JobPosting> = ({
     </Layout>
   );
 };
-
-export default Job;
+export default JobPage;

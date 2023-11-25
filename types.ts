@@ -15,6 +15,4 @@ export type Job = {
   currency?: string | null;
 };
 
-export type JobPostings = {
-  jobs: Job[];
-};
+export type JobPostings = Job[];
