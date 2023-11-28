@@ -25,3 +25,18 @@ model go_sk_jobs {
 
   @@map("go-sk-jobs")
 }
+
+model go_sk_companies {
+  company_id            String  @id @db.Uuid
+  company_name          String
+  business_language     String
+  korean_level_required String
+  company_url           String
+  company_industry      String?
+  company_logo          String?
+  company_careers_url   String?
+  company_sns_url       String?
+  company_description   String?
+
+  @@map("go_sk_companies")
+}

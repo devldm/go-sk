@@ -16,3 +16,16 @@ export type Job = {
 };
 
 export type JobPostings = Job[];
+
+export type company = {
+  company_id: string;
+  company_name: string;
+  business_language: string;
+  korean_level_required: string;
+  company_url: string;
+  company_industry: string | null;
+  company_logo: string | null;
+  company_careers_url: string | null;
+  company_sns_url: string | null;
+  company_description: string | null;
+};

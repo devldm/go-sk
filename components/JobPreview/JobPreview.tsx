@@ -19,12 +19,12 @@ export default function JobPreview({ jobProps }: { jobProps: Job }) {
       </div>
       <div className="flex gap-2 px-3">
         {jobProps?.remote_level && (
-          <DetailsPill jobProps={jobProps?.remote_level} />
+          <DetailsPill detail={jobProps?.remote_level} />
         )}
         {jobProps?.experience_level && (
-          <DetailsPill jobProps={jobProps?.experience_level} />
+          <DetailsPill detail={jobProps?.experience_level} />
         )}
-        {jobProps?.role_type && <DetailsPill jobProps={jobProps?.role_type!} />}
+        {jobProps?.role_type && <DetailsPill detail={jobProps?.role_type!} />}
       </div>
     </div>
   );
