@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import NavBar from "../components/NavBar/NavBar";
 import HeroHome from "../components/HeroHome/HeroHome";

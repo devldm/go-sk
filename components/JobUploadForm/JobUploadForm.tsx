@@ -8,24 +8,24 @@ import FormInput from "../FormInput/FormInput";
 import JobPreview from "../JobPreview/JobPreview";
 import Button from "../Button/Button";
 
-export default function JobUploadForm() {
-  const defaultJobForm: Job = {
-    job_id: "",
-    job_title: "",
-    company_name: "",
-    location: "",
-    job_description: "",
-    apply_url: "",
-    linkedin_url: "",
-    posted_datetime: "",
-    role_type: "",
-    experience_level: "",
-    remote_level: "",
-    salary_min: 0,
-    salary_max: 0,
-    currency: "",
-  };
+const defaultJobForm: Job = {
+  job_id: "",
+  job_title: "",
+  company_name: "",
+  location: "",
+  job_description: "",
+  apply_url: "",
+  linkedin_url: "",
+  posted_datetime: "",
+  role_type: "",
+  experience_level: "",
+  remote_level: "",
+  salary_min: 0,
+  salary_max: 0,
+  currency: "",
+};
 
+export default function JobUploadForm() {
   const [formState, setFormState] = useState(defaultJobForm);
 
   const handleSubmit = async (event: React.FormEvent) => {

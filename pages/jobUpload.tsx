@@ -1,8 +1,7 @@
-import type { NextPage } from "next";
 import JobUploadForm from "../components/JobUploadForm/JobUploadForm";
 import Layout from "../components/Layout/Layout";
 
-const JobUpload: NextPage = () => {
+const JobUpload: React.FC = () => {
   return (
     <Layout pageTitle={"Job Upload"}>
       <div className=" flex flex-col items-center justify-center">
