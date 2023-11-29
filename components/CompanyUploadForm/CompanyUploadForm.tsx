@@ -11,6 +11,7 @@ const defaultCompanyForm: company = {
   company_id: "",
   company_name: "",
   business_language: "",
+  company_address: "",
   korean_level_required: "",
   company_industry: "",
   company_logo: "",
@@ -30,6 +31,7 @@ export default function CompanyUploadForm() {
       company_id: self.crypto.randomUUID(),
       company_name: formState.company_name,
       business_language: formState.business_language,
+      company_address: formState.company_address,
       korean_level_required: formState.korean_level_required,
       company_industry: formState.company_industry,
       company_logo: formState.company_logo,
@@ -108,6 +110,18 @@ export default function CompanyUploadForm() {
             setFormState({
               ...formState,
               company_industry: e.target.value,
+            })
+          }
+        />
+        <FormInput
+          type={"text"}
+          labelText={"Company address:"}
+          required={false}
+          id={"companyAddress"}
+          onChange={(e) =>
+            setFormState({
+              ...formState,
+              company_address: e.target.value,
             })
           }
         />

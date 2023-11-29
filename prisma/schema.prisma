@@ -37,6 +37,7 @@ model go_sk_companies {
   company_careers_url   String?
   company_sns_url       String?
   company_description   String?
+  company_address       String?
 
   @@map("go_sk_companies")
 }

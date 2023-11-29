@@ -13,6 +13,7 @@ export default async function handler(
           company_id: req.body.company_id,
           company_name: req.body.company_name,
           business_language: req.body.business_language,
+          company_address: req.body.company_address,
           korean_level_required: req.body.korean_level_required,
           company_industry: req.body.company_industry,
           company_logo: req.body.company_logo,

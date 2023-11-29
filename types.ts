@@ -20,6 +20,7 @@ export type JobPostings = Job[];
 export type company = {
   company_id: string;
   company_name: string;
+  company_address: string | null;
   business_language: string;
   korean_level_required: string;
   company_url: string;

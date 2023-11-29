@@ -33,14 +33,14 @@ const Jobs: React.FC = () => {
       <NavBar />
       <main>
         {!loading ? (
-          <div className="flex flex-col items-center lg:w-[60%] m-auto">
-            {!jobs && (
-              <p className="lg:w-[60%] text-left mt-0 mb-[30px] text-2xl">
-                We partner with firms to get the best roles for people looking
-                to relocate to Seoul.{" "}
-              </p>
-            )}
-            <div className="flex flex-col gap-4 lg:w-[60%] py-4 px-6">
+          <div className="flex flex-col items-center lg:w-[60%] m-auto mt-6 gap-6">
+            <div className="flex flex-row justify-between items-center ">
+              <h1 className="text-3xl">Jobs</h1>
+              <Link href="/jobUpload" className="max-w-max">
+                <Button buttonText="Upload" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
               {jobs && (
                 <>
                   {jobs.map((job: Job) => (

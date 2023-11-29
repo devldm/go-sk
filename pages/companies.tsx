@@ -21,7 +21,6 @@ export default function Companies() {
 
   useEffect(() => {
     getAllCompanies();
-    setLoading(false);
   }, []);
 
   return (
@@ -32,52 +31,44 @@ export default function Companies() {
         <link rel="icon" type="image/svg+xml" href="/sk.svg" sizes="any" />
       </Head>
       <NavBar />
-      <main>
-        <main>
-          <div className="flex flex-row justify-between items-center lg:w-[60%] m-auto">
-            <h1 className="text-3xl">Companies</h1>
-            <Link href="/companiesUpload" className="max-w-max">
-              <Button buttonText="Upload a company" />
-            </Link>
-          </div>
-          {!loading ? (
-            <div className="flex flex-col items-center lg:w-[60%] m-auto">
-              {/* {!companies && (
-              <p className="lg:w-[60%] text-left mt-0 mb-[30px] text-2xl">
-                We partner with firms to get the best roles for people looking
-                to relocate to Seoul.{" "}
-              </p>
-            )} */}
-              <div className="flex flex-col gap-4 lg:w-[60%] py-4 px-6">
-                {companies && (
-                  <>
-                    {companies.map((company: company) => (
-                      <Link
-                        href={`companies/${company.company_id}`}
-                        key={company.company_id}
-                        passHref
-                      >
-                        <CompanyPreview companyProps={company} />
-                      </Link>
-                    ))}
-                  </>
-                )}
-                {!loading && companies.length === 0 && (
-                  <>
-                    <h2 className="text-3xl">
-                      No companies have been submitted yet. Come back later
-                    </h2>
-                    <Link href="/companiesUpload">
-                      <Button buttonText="Upload a company" />
-                    </Link>
-                  </>
-                )}
-              </div>
+      <main className="min-h-screen">
+        {!loading ? (
+          <div className="flex flex-col items-center lg:w-[60%] m-auto gap-6 mt-6">
+            <div className="flex flex-row justify-between items-center">
+              <h1 className="text-3xl">Companies</h1>
+              <Link href="/companiesUpload" className="max-w-max">
+                <Button buttonText="Upload" />
+              </Link>
             </div>
-          ) : (
-            <Spinner />
-          )}
-        </main>
+            <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
+              {companies && (
+                <>
+                  {companies.map((company: company) => (
+                    <Link
+                      href={`companies/${company.company_id}`}
+                      key={company.company_id}
+                      passHref
+                    >
+                      <CompanyPreview companyProps={company} />
+                    </Link>
+                  ))}
+                </>
+              )}
+              {!loading && companies.length === 0 && (
+                <>
+                  <h2 className="text-3xl">
+                    No companies have been submitted yet. Come back later
+                  </h2>
+                  <Link href="/companiesUpload">
+                    <Button buttonText="Upload a company" />
+                  </Link>
+                </>
+              )}
+            </div>
+          </div>
+        ) : (
+          <Spinner />
+        )}
       </main>
     </div>
   );
