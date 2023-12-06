@@ -33,7 +33,7 @@ export default function Companies() {
       <NavBar />
       <main className="min-h-screen">
         {!loading ? (
-          <div className="flex flex-col items-center lg:w-[60%] m-auto gap-6 mt-6">
+          <div className="flex flex-col items-center lg:w-[60%] m-auto gap-6 mt-6 p-5">
             <div className="flex flex-row justify-between items-center">
               <h1 className="text-3xl">Companies</h1>
               <Link href="/companiesUpload" className="max-w-max">

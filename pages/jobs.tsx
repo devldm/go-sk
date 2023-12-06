@@ -33,7 +33,7 @@ const Jobs: React.FC = () => {
       <NavBar />
       <main>
         {!loading ? (
-          <div className="flex flex-col items-center lg:w-[60%] m-auto mt-6 gap-6">
+          <div className="flex flex-col items-center lg:w-[60%] m-auto mt-6 gap-6 p-5">
             <div className="flex flex-row justify-between items-center ">
               <h1 className="text-3xl">Jobs</h1>
               <Link href="/jobUpload" className="max-w-max">

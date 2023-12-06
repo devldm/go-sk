@@ -17,7 +17,7 @@ export default function JobPreview({ jobProps }: { jobProps: Job }) {
           </p>
         </div>
       </div>
-      <div className="flex gap-2 px-3">
+      <div className="flex gap-2 px-3 overflow-hidden">
         {jobProps?.remote_level && (
           <DetailsPill detail={jobProps?.remote_level} />
         )}
