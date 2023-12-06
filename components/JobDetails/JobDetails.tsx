@@ -11,39 +11,43 @@ export default function JobDetails({ job }: { job: Job }) {
     job.remote_level;
 
   return (
-    <div className="lg:fixed min-w-max max-w-[400px]">
+    <div className="lg:fixed min-w-max max-w-[400px] ">
       {noJobDetails && (
         <>
-          <div className="bg-[#222] p-4 rounded-xl mb-5 flex flex-col">
+          <div className="bg-[#222] p-4 rounded-xl mb-5 flex flex-col border-[#3f3e3e] border-2">
             <h3 className="my-3 text-2xl font-bold">Job Details</h3>
             <hr className="mb-2" />
             <div className={"flex gap-4 flex-col"}>
               {job.role_type && (
                 <div className={""}>
-                  <p className="font-thin min-w-max text-lg">Role type</p>
-                  <p className="min-w-max text-xl">{job.role_type}</p>
+                  <p className=" min-w-max text-lg">Role type</p>
+                  <p className="min-w-max text-xl font-semibold">
+                    {job.role_type}
+                  </p>
                 </div>
               )}
               {job.experience_level && (
                 <div className={""}>
-                  <p className="font-thin min-w-max text-lg">
-                    Experience level
+                  <p className="min-w-max text-lg">Experience level</p>
+                  <p className="min-w-max text-xl font-semibold">
+                    {job.experience_level}
                   </p>
-                  <p className="min-w-max text-xl">{job.experience_level}</p>
                 </div>
               )}
               {job.remote_level && (
                 <div className={""}>
-                  <p className="font-thin min-w-max text-lg">Remote level</p>
-                  <p className="min-w-max text-xl">{job.remote_level}</p>
+                  <p className=" min-w-max text-lg">Remote level</p>
+                  <p className="min-w-max text-xl font-semibold">
+                    {job.remote_level}
+                  </p>
                 </div>
               )}
               {job.salary_min! > 0 && job.salary_max! > 0 && (
                 <div className={""}>
-                  <p className="font-thin min-w-max text-lg">
+                  <p className="min-w-max text-lg">
                     Salary range {job.currency && `(${job.currency})`}
                   </p>
-                  <p className="min-w-max text-xl">{`${job.salary_min} - ${job.salary_max}`}</p>
+                  <p className="min-w-max text-xl font-semibold">{`${job.salary_min} - ${job.salary_max}`}</p>
                 </div>
               )}
             </div>
