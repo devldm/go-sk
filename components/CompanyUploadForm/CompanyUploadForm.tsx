@@ -230,7 +230,7 @@ export default function CompanyUploadForm() {
         <Button
           type="submit"
           buttonText={"Submit"}
-          customClassName="lg:max-w-[50%] w-[100%]"
+          customClassName="lg:max-w-[50%] w-[100%] text-xl mb-10"
         />
       </form>
     </div>

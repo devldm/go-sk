@@ -16,7 +16,7 @@ export default function Button({
   return (
     <button
       type={type}
-      className={`px-[30px] py-[15px] bg-[#3758f9] rounded-lg text-white border-0 cursor-pointer max-w-max hover:shadow-white shadow-sm ${customClassName}`}
+      className={`rounded-md bg-[#3758f9] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#2c45c1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ${customClassName}`}
       onClick={() => {
         if (applyUrl) {
           window.location.href = `https://${applyUrl}`;
