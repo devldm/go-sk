@@ -1,6 +1,6 @@
 import Head from "next/head";
 import NavBar from "../components/NavBar/NavBar";
-import HeroNew from "../components/HeroNew";
+import Hero from "../components/Hero";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
       </Head>
       <main>
         <NavBar />
-        <HeroNew />
+        <Hero />
       </main>
     </>
   );

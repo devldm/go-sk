@@ -3,7 +3,7 @@ import { Job } from "../../types";
 import Button from "../Button/Button";
 
 export default function JobDetails({ job }: { job: Job }) {
-  const noJobDetails =
+  const validJobDetails =
     job.role_type ||
     job.experience_level ||
     job.salary_min ||
@@ -12,7 +12,7 @@ export default function JobDetails({ job }: { job: Job }) {
 
   return (
     <div className="lg:fixed min-w-max max-w-[400px] ">
-      {noJobDetails && (
+      {validJobDetails && (
         <>
           <div className="bg-[#222] p-4 rounded-xl mb-5 flex flex-col border-[#3f3e3e] border-2">
             <h3 className="my-3 text-2xl font-bold">Job Details</h3>

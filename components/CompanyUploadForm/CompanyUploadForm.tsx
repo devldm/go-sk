@@ -87,7 +87,7 @@ export default function CompanyUploadForm() {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col m-auto items-center caret-white text-xl"
+        className="flex flex-col gap-2 m-auto items-center caret-white text-xl"
       >
         <FormInput
           type={"text"}
@@ -98,6 +98,18 @@ export default function CompanyUploadForm() {
             setFormState({
               ...formState,
               company_name: e.target.value,
+            })
+          }
+        />
+        <FormInput
+          type={"text"}
+          labelText={"Company URL:"}
+          required={true}
+          id={"companyUrl"}
+          onChange={(e) =>
+            setFormState({
+              ...formState,
+              company_url: e.target.value,
             })
           }
         />
@@ -139,18 +151,6 @@ export default function CompanyUploadForm() {
         />
         <FormInput
           type={"text"}
-          labelText={"Company URL:"}
-          required={true}
-          id={"companyUrl"}
-          onChange={(e) =>
-            setFormState({
-              ...formState,
-              company_url: e.target.value,
-            })
-          }
-        />
-        <FormInput
-          type={"text"}
           labelText={"Careers url:"}
           required={false}
           id={"companyCareersUrl"}
@@ -173,12 +173,18 @@ export default function CompanyUploadForm() {
             })
           }
         />
-        <label htmlFor="koreanLevelRequired">Korean level required:</label>
+        <label
+          htmlFor="koreanLevelRequired"
+          className="after:content-['*'] after:ml-0.5 after:text-red-500"
+        >
+          Korean level:
+        </label>
         <select
-          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212]"
+          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
           id="koreanLevelRequired"
           required
           name="koreanLevelRequired"
+          value={formState.korean_level_required}
           onChange={(e) =>
             setFormState({
               ...formState,
@@ -194,10 +200,16 @@ export default function CompanyUploadForm() {
           <option value="Intermediate">Intermediate</option>
           <option value="Advanced">Advanced</option>
         </select>
-        <label htmlFor="businessLanguage">Business language:</label>
+        <label
+          htmlFor="businessLanguage"
+          className="after:content-['*'] after:ml-0.5 after:text-red-500"
+        >
+          Business language:
+        </label>
         <select
-          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212]"
+          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
           id="businessLanguage"
+          value={formState.business_language}
           name="businessLanguage"
           required
           onChange={(e) =>
@@ -216,7 +228,7 @@ export default function CompanyUploadForm() {
         </select>
         <label htmlFor="companyDescription">Company description:</label>
         <ReactQuill
-          className=""
+          className="rounded-lg"
           theme="snow"
           modules={modules}
           onChange={(e) =>

@@ -28,7 +28,7 @@ export default function FormInput({
         {labelText}
       </label>
       <input
-        className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212]"
+        className="p-2 text-xl rounded-lg bg-[#222] ring-2 outline-none ring-inset ring-[#3f3e3e] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
         type={type}
         required={required}
         id={id}

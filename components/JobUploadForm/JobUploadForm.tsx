@@ -91,7 +91,7 @@ export default function JobUploadForm() {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col m-auto items-center caret-white text-xl"
+        className="flex flex-col gap-2 m-auto items-center caret-white text-xl"
       >
         <FormInput
           type={"text"}
@@ -155,7 +155,7 @@ export default function JobUploadForm() {
         />
         <label htmlFor="roleType">Role type:</label>
         <select
-          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212]"
+          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
           id="roleType"
           name="roleType"
           onChange={(e) =>
@@ -175,7 +175,7 @@ export default function JobUploadForm() {
         </select>
         <label htmlFor="jobLevel">Experience level:</label>
         <select
-          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212]"
+          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
           id="experienceLevel"
           name="experienceLevel"
           onChange={(e) =>
@@ -194,7 +194,7 @@ export default function JobUploadForm() {
         </select>
         <label htmlFor="remoteOrNot">Remote, Hybrid or On-site:</label>
         <select
-          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212]"
+          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
           id="remoteOrNot"
           name="remoteOrNot"
           onChange={(e) =>
@@ -211,11 +211,11 @@ export default function JobUploadForm() {
           <option value="Hybrid">Hybrid</option>
           <option value="On-Site">On-Site</option>
         </select>
-        <div className="flex flex-col lg:flex-row items-center">
+        <div className="flex flex-col lg:gap-3 lg:flex-row items-center">
           <div className="">
             <label htmlFor="currency">Currency:</label>
             <select
-              className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212]"
+              className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
               id="currency"
               name="currency"
               onChange={(e) =>
@@ -279,7 +279,7 @@ export default function JobUploadForm() {
         <Button
           type="submit"
           buttonText={"Submit"}
-          customClassName="lg:max-w-[50%] w-[100%]"
+          customClassName="lg:max-w-[50%] w-[100%] text-xl"
         />
       </form>
       <div className="pb-10">

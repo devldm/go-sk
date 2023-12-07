@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Button from "./Button/Button";
 
-export default function HeroNew() {
+export default function Hero() {
   return (
     <>
       <main className="grid grid-cols-1 h-[80vh] w-screen place-items-center">
         <div className="flex flex-col items-center h-full justify-center w-full p-6 md:w-[60%] text-center gap-3 md:gap-6">
-          <h1 className="text-5xl md:text-[5rem] leading-[1.15] font-bold">
+          <h1 className="text-6xl md:text-[5rem] leading-[1.15] font-bold">
             Start your journey to <br />
             <span className="text-[#3758f9]">South Korea</span>
           </h1>
@@ -36,7 +36,7 @@ export default function HeroNew() {
       >
         <div className="flex flex-col items-center justify-center md:gap-8 gap-8 w-max">
           <h1 className="text-4xl font-bold text-center">What is GO-SK?</h1>
-          <div className="grid grid-cols-1 h-[200px] md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 w-screen lg:w-[60%] px-6 md:px-12 items-center mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 w-screen lg:w-[60%] px-6 mb-16 md:px-12 items-center h-full">
             <div className="bg-[#30363d67] rounded-xl hover:shadow-[#3758f9] min-w-min p-4 border-2 border-[#3f3e3e] hover:border-[#3758f9] flex-col justify-between flex h-max py-6">
               <div>
                 <p className="font-bold text-2xl">Find a role</p>
