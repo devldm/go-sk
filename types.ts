@@ -17,8 +17,8 @@ export type Job = {
 
 type role_type = "Full time" | "Part time" | "Internship" | "Contract" | null;
 type experience_level = "Entry level" | "Mid level" | "Senior level" | null;
-type remote_level = "Remote" | "Hybrid" | "On-Site" | null;
-type currency = "USD" | "EUR" | "KRW" | "GBP" | null;
+export type remote_level = "Remote" | "Hybrid" | "On-Site" | null;
+export type currency = "USD" | "EUR" | "KRW" | "GBP" | null;
 
 export type JobPostings = Job[];
 

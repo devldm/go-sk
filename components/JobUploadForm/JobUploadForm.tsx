@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.snow.css";
 import DOMPurify from "dompurify";
-import { Job } from "../../types";
+import { Job, currency, remote_level } from "../../types";
 import FormInput from "../FormInput/FormInput";
 import JobPreview from "../JobPreview/JobPreview";
 import Button from "../Button/Button";
@@ -19,10 +19,10 @@ const defaultJobForm: Job = {
   posted_datetime: "",
   role_type: "",
   experience_level: "",
-  remote_level: "",
+  remote_level: null,
   salary_min: 0,
   salary_max: 0,
-  currency: "",
+  currency: null,
 };
 
 export default function JobUploadForm() {
@@ -200,7 +200,7 @@ export default function JobUploadForm() {
           onChange={(e) =>
             setFormState({
               ...formState,
-              remote_level: e.target.value,
+              remote_level: e.target.value as remote_level,
             })
           }
         >
@@ -221,7 +221,7 @@ export default function JobUploadForm() {
               onChange={(e) =>
                 setFormState({
                   ...formState,
-                  currency: e.target.value,
+                  currency: e.target.value as currency,
                 })
               }
             >
