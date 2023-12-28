@@ -51,7 +51,7 @@ const Jobs: React.FC = () => {
                 </>
               )}
               {!loading && jobs.length === 0 && (
-                <>
+                <div className="flex flex-col gap-5">
                   <h2 className="text-3xl">
                     No jobs are available right now. We are busy trying to get
                     more roles for you!
@@ -63,7 +63,7 @@ const Jobs: React.FC = () => {
                   <Link href="/jobUpload">
                     <Button buttonText="Upload a role" />
                   </Link>
-                </>
+                </div>
               )}
             </div>
           </div>

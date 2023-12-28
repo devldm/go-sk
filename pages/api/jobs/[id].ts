@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../../db";
+import { Job } from "../../../types";
 
 export default async function handler(
   req: NextApiRequest,
@@ -8,15 +9,20 @@ export default async function handler(
   if (req.method !== "GET") {
     return res.status(405).json({ message: "Method not allowed" });
   }
+
   try {
-    await prisma.go_sk_jobs.findUnique({
+    const job = await prisma.go_sk_jobs.findUnique({
       where: {
         job_id: req.query.id?.toString(),
       },
     });
 
-    return res.status(200);
+    if (!job) {
+      return res.status(404).json({ message: "Job not found" });
+    }
+
+    return res.status(200).json(job);
   } catch (err) {
-    return res.status(500).send("Server error");
+    return res.status(500).json({ message: "Server error" });
   }
 }

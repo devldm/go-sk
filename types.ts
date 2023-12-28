@@ -7,7 +7,7 @@ export type Job = {
   linkedin_url?: string | null;
   apply_url?: string | null;
   posted_datetime?: string | null;
-  role_type?: role_type;
+  role_type?: string | null;
   experience_level?: experience_level;
   remote_level?: remote_level;
   salary_min?: number | null;

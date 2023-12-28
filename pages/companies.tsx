@@ -55,14 +55,14 @@ export default function Companies() {
                 </>
               )}
               {!loading && companies.length === 0 && (
-                <>
+                <div className="flex flex-col gap-5">
                   <h2 className="text-3xl">
                     No companies have been submitted yet. Come back later
                   </h2>
                   <Link href="/companiesUpload">
                     <Button buttonText="Upload a company" />
                   </Link>
-                </>
+                </div>
               )}
             </div>
           </div>
