@@ -8,7 +8,7 @@ export type Job = {
   apply_url?: string | null;
   posted_datetime?: string | null;
   role_type?: string | null;
-  experience_level?: experience_level;
+  experience_level?: string | null;
   remote_level?: remote_level;
   salary_min?: number | null;
   salary_max?: number | null;
