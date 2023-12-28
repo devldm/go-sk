@@ -11,7 +11,7 @@ export default async function handler(
         data: {
           job_id: req.body.job_id,
           job_description: req.body.job_description,
-          job_title: req.body.job_title,
+          job_title: req.body.jsob_title,
           company_name: req.body.company_name,
           location: req.body.location,
           apply_url: req.body.apply_url,

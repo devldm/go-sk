@@ -9,10 +9,10 @@ export type Job = {
   posted_datetime?: string | null;
   role_type?: string | null;
   experience_level?: string | null;
-  remote_level?: remote_level;
+  remote_level?: string | null;
   salary_min?: number | null;
   salary_max?: number | null;
-  currency?: currency;
+  currency?: string | null;
 };
 
 type role_type = "Full time" | "Part time" | "Internship" | "Contract" | null;
