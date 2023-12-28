@@ -24,7 +24,7 @@ export default async function handler(
         },
       });
 
-      return res.status(200).send("Success");
+      return res.status(200).send(postData);
     } catch (err) {
       console.error(err);
       return res.status(500).send("Server error");

@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../db";
+import { Job } from "../../types";
 
 export default async function handler(
   req: NextApiRequest,
@@ -7,11 +8,11 @@ export default async function handler(
 ) {
   if (req.method === "POST") {
     try {
-      await prisma.go_sk_jobs.create({
+      const job: Job = await prisma.go_sk_jobs.create({
         data: {
           job_id: req.body.job_id,
           job_description: req.body.job_description,
-          job_title: req.body.jsob_title,
+          job_title: req.body.job_title,
           company_name: req.body.company_name,
           location: req.body.location,
           apply_url: req.body.apply_url,
@@ -26,8 +27,9 @@ export default async function handler(
         },
       });
 
-      return res.status(200).send("Success");
+      return res.status(200).send(job);
     } catch (err) {
+      console.log(err);
       return res.status(500).send("Server error");
     }
   } else {

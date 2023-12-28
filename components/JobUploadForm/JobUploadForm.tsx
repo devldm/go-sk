@@ -200,7 +200,7 @@ export default function JobUploadForm() {
           onChange={(e) =>
             setFormState({
               ...formState,
-              remote_level: e.target.value as remote_level,
+              remote_level: e.target.value,
             })
           }
         >
@@ -221,7 +221,7 @@ export default function JobUploadForm() {
               onChange={(e) =>
                 setFormState({
                   ...formState,
-                  currency: e.target.value as currency,
+                  currency: e.target.value,
                 })
               }
             >
