@@ -7,13 +7,18 @@ export type Job = {
   linkedin_url?: string | null;
   apply_url?: string | null;
   posted_datetime?: string | null;
-  role_type?: string | null;
-  experience_level?: string | null;
-  remote_level?: string | null;
+  role_type?: role_type;
+  experience_level?: experience_level;
+  remote_level?: remote_level;
   salary_min?: number | null;
   salary_max?: number | null;
-  currency?: string | null;
+  currency?: currency;
 };
+
+type role_type = "Full time" | "Part time" | "Internship" | "Contract" | null;
+type experience_level = "Entry level" | "Mid level" | "Senior level" | null;
+type remote_level = "Remote" | "Hybrid" | "On-Site" | null;
+type currency = "USD" | "EUR" | "KRW" | "GBP" | null;
 
 export type JobPostings = Job[];
 

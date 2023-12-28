@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../db";
-import { Job } from "../../types";
 
 export default async function handler(
   req: NextApiRequest,
@@ -8,7 +7,7 @@ export default async function handler(
 ) {
   if (req.method === "POST") {
     try {
-      const postData: Job = await prisma.go_sk_jobs.create({
+      await prisma.go_sk_jobs.create({
         data: {
           job_id: req.body.job_id,
           job_description: req.body.job_description,
