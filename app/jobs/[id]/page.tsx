@@ -1,17 +1,19 @@
+"use client";
+
 import Layout from "../../components/Layout/Layout";
-import { getTimeSincePosting } from "../../utils/getTimeSincePosting";
+import { getTimeSincePosting } from "../../../utils/getTimeSincePosting";
 import JobDetails from "../../components/JobDetails/JobDetails";
-import { Job } from "../../types";
-import { useRouter } from "next/router";
+import { Job } from "../../../types";
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import Spinner from "../../components/Spinner/Spinner";
 
-const JobPage: React.FC = () => {
+const JobPage: React.FC = ({}) => {
   const [job, setJob] = useState({} as Job);
   const [currentJobId, setCurrentJobId] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const router = useRouter();
+  const path = usePathname();
 
   const getJob = useCallback(async () => {
     setLoading(true);
@@ -22,13 +24,12 @@ const JobPage: React.FC = () => {
   }, [currentJobId]);
 
   useEffect(() => {
-    if (router.isReady) {
-      const { id } = router.query;
-      if (!id) return;
-      setCurrentJobId(id as string);
+    if (path) {
+      const getIdFromPathname = path.slice(6);
+      setCurrentJobId(getIdFromPathname);
       if (currentJobId) getJob();
     }
-  }, [router.isReady, currentJobId, router.query, getJob]);
+  }, [currentJobId, getJob, path]);
 
   return (
     <Layout pageTitle={"Job details"}>

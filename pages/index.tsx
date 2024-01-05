@@ -1,6 +1,6 @@
 import Head from "next/head";
-import NavBar from "../components/NavBar/NavBar";
-import Hero from "../components/Hero";
+import NavBar from "../app/components/NavBar/NavBar";
+import Hero from "../app/components/Hero";
 
 const Home = () => {
   return (

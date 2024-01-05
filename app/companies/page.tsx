@@ -1,10 +1,12 @@
+"use client";
+
 import Head from "next/head";
 import NavBar from "../components/NavBar/NavBar";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Button from "../components/Button/Button";
 import Spinner from "../components/Spinner/Spinner";
-import { company } from "../types";
+import { company } from "../../types";
 import CompanyPreview from "../components/CompanyPreview";
 
 export default function Companies() {
@@ -36,7 +38,7 @@ export default function Companies() {
           <div className="flex flex-col items-center lg:w-[60%] m-auto gap-6 mt-6 p-5">
             <div className="flex flex-row justify-between items-center">
               <h1 className="text-3xl">Companies</h1>
-              <Link href="/companiesUpload" className="max-w-max">
+              <Link href="/companies-upload" className="max-w-max">
                 <Button buttonText="Upload" />
               </Link>
             </div>

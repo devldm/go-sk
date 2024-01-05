@@ -1,15 +1,16 @@
-import { useRouter } from "next/router";
+"use client";
 import { useCallback, useEffect, useState } from "react";
-import { company } from "../../types";
+import { company } from "../../../types";
 import Layout from "../../components/Layout/Layout";
 import Spinner from "../../components/Spinner/Spinner";
+import { usePathname } from "next/navigation";
 
 export default function CompanyPage() {
   const [company, setCompany] = useState({} as company);
   const [currentCompanyId, setCurrentCompanyId] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const router = useRouter();
+  const path = usePathname();
 
   const getCompany = useCallback(async () => {
     setLoading(true);
@@ -20,13 +21,12 @@ export default function CompanyPage() {
   }, [currentCompanyId]);
 
   useEffect(() => {
-    if (router.isReady) {
-      const { id } = router.query;
-      if (!id) return;
-      setCurrentCompanyId(id as string);
+    if (path) {
+      const getIdFromCompanyPathname = path.slice(10);
+      setCurrentCompanyId(getIdFromCompanyPathname);
       if (currentCompanyId) getCompany();
     }
-  }, [router.isReady, currentCompanyId, router.query, getCompany]);
+  }, [currentCompanyId, getCompany, path]);
 
   return (
     <Layout pageTitle={"Job details"}>

@@ -1,8 +1,10 @@
+"use client";
+
 import Head from "next/head";
 import NavBar from "../components/NavBar/NavBar";
 import JobPreview from "../components/JobPreview/JobPreview";
 import Link from "next/link";
-import { Job } from "../types";
+import { Job } from "../../types";
 import Button from "../components/Button/Button";
 import { useEffect, useState } from "react";
 import Spinner from "../components/Spinner/Spinner";
@@ -36,7 +38,7 @@ const Jobs: React.FC = () => {
           <div className="flex flex-col items-center lg:w-[60%] m-auto mt-6 gap-6 p-5">
             <div className="flex flex-row justify-between items-center ">
               <h1 className="text-3xl">Jobs</h1>
-              <Link href="/jobUpload" className="max-w-max">
+              <Link href="/job-upload" className="max-w-max">
                 <Button buttonText="Upload" />
               </Link>
             </div>
@@ -44,7 +46,7 @@ const Jobs: React.FC = () => {
               {jobs && (
                 <>
                   {jobs.map((job: Job) => (
-                    <Link href={`jobs/${job.job_id}`} key={job.job_id} passHref>
+                    <Link href={`jobs/${job.job_id}`} key={job.job_id}>
                       <JobPreview jobProps={job} />
                     </Link>
                   ))}

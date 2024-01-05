@@ -1,5 +1,5 @@
-import { Job } from "../../types";
-import { getTimeSincePosting } from "../../utils/getTimeSincePosting";
+import { Job } from "../../../types";
+import { getTimeSincePosting } from "../../../utils/getTimeSincePosting";
 import DetailsPill from "../detailsPill/DetailsPill";
 
 export default function JobPreview({ jobProps }: { jobProps: Job }) {
