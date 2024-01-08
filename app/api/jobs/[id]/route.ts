@@ -10,8 +10,6 @@ export async function GET(request: Request) {
     const { pathname } = new URL(request.url); // Get the URL pathname
     const id = pathname.split("/").pop(); // Extract the last segment as 'id'
 
-    console.log(id);
-
     if (id) {
       const job = await prisma.go_sk_jobs.findUnique({
         where: {

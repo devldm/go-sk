@@ -57,7 +57,6 @@ export default function CompanyUploadForm() {
         "Company submitted successfully! It'll be on the companies page soon."
       );
     } else {
-      console.error(response);
       alert("Company post failed. Please try again later.");
     }
   };

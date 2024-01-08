@@ -3,7 +3,6 @@ import { company } from "../../../../types";
 
 export async function POST(request: Request) {
   if (request.method === "POST" && request.body) {
-    console.log(request.body);
     const body: company = await request.json();
     try {
       const postData: company = await prisma.go_sk_companies.create({
@@ -12,7 +11,6 @@ export async function POST(request: Request) {
 
       return Response.json(postData);
     } catch (err) {
-      console.error(err);
       return new Response("Server Error", {
         status: 500,
       });
