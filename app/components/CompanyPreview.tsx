@@ -1,5 +1,4 @@
-import DetailsPill from "./detailsPill/DetailsPill";
-import { company } from "../types";
+import { company } from "../../types";
 
 export default function CompanyPreview({
   companyProps,
