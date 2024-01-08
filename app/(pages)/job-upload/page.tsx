@@ -1,5 +1,5 @@
-import JobUploadForm from "../components/JobUploadForm/JobUploadForm";
-import Layout from "../components/Layout/Layout";
+import JobUploadForm from "../../components/JobUploadForm/JobUploadForm";
+import Layout from "../../components/Layout/Layout";
 
 const JobUpload: React.FC = () => {
   return (

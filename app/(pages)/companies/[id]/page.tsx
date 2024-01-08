@@ -1,8 +1,8 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
-import { company } from "../../../types";
-import Layout from "../../components/Layout/Layout";
-import Spinner from "../../components/Spinner/Spinner";
+import { company } from "../../../../types";
+import Layout from "../../../components/Layout/Layout";
+import Spinner from "../../../components/Spinner/Spinner";
 import { usePathname } from "next/navigation";
 
 export default function CompanyPage() {

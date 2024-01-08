@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Job } from "../../types";
+import { Job } from "../../../types";
 import Button from "../Button/Button";
 
 export default function JobDetails({ job }: { job: Job }) {

@@ -1,8 +1,11 @@
-import "../styles/globals.css";
+import "../globals.css";
 
 export const metadata = {
   title: "GO-SK",
   description: "Kick start your Korean life.",
+  icons: {
+    icon: "./sk.svg",
+  },
 };
 
 export default function RootLayout({

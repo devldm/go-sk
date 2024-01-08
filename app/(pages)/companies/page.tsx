@@ -1,13 +1,13 @@
 "use client";
 
 import Head from "next/head";
-import NavBar from "../components/NavBar/NavBar";
+import NavBar from "../../components/NavBar/NavBar";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Button from "../components/Button/Button";
-import Spinner from "../components/Spinner/Spinner";
-import { company } from "../../types";
-import CompanyPreview from "../components/CompanyPreview";
+import Button from "../../components/Button/Button";
+import Spinner from "../../components/Spinner/Spinner";
+import { company } from "../../../types";
+import CompanyPreview from "../../components/CompanyPreview";
 
 export default function Companies() {
   const [companies, setCompanies] = useState([]);
@@ -15,7 +15,7 @@ export default function Companies() {
 
   const getAllCompanies = async () => {
     setLoading(true);
-    const response = await fetch("/api/allCompanies");
+    const response = await fetch("/api/companies/all-companies");
     const data = await response.json();
     setCompanies(data);
     setLoading(false);

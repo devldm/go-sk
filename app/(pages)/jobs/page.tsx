@@ -1,13 +1,13 @@
 "use client";
 
 import Head from "next/head";
-import NavBar from "../components/NavBar/NavBar";
-import JobPreview from "../components/JobPreview/JobPreview";
+import NavBar from "../../components/NavBar/NavBar";
+import JobPreview from "../../components/JobPreview/JobPreview";
 import Link from "next/link";
-import { Job } from "../../types";
-import Button from "../components/Button/Button";
+import { Job } from "../../../types";
+import Button from "../../components/Button/Button";
 import { useEffect, useState } from "react";
-import Spinner from "../components/Spinner/Spinner";
+import Spinner from "../../components/Spinner/Spinner";
 
 const Jobs: React.FC = () => {
   const [jobs, setJobs] = useState([]);
@@ -15,7 +15,7 @@ const Jobs: React.FC = () => {
 
   const getAllJobs = async () => {
     setLoading(true);
-    const response = await fetch("/api/allJobs");
+    const response = await fetch("/api/jobs/all-jobs");
     const data = await response.json();
     setJobs(data);
     setLoading(false);

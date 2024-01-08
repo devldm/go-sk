@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.snow.css";
 import DOMPurify from "dompurify";
-import { Job, currency, remote_level } from "../../types";
+import { Job, currency, remote_level } from "../../../types";
 import FormInput from "../FormInput/FormInput";
 import JobPreview from "../JobPreview/JobPreview";
 import Button from "../Button/Button";
@@ -51,12 +51,12 @@ export default function JobUploadForm() {
       currency: formState.currency,
     };
 
-    const response = await fetch("/api/postJob", {
+    const response = await fetch("/api/jobs/post-job", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(data as Job),
     });
 
     if (response.ok) {

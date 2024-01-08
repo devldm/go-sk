@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.snow.css";
 import DOMPurify from "dompurify";
-import { company } from "../../types";
+import { company } from "../../../types";
 import FormInput from "../FormInput/FormInput";
 import Button from "../Button/Button";
 
@@ -44,12 +44,12 @@ export default function CompanyUploadForm() {
         formState.company_description ?? "null"
       ),
     };
-    const response = await fetch("/api/postCompany", {
+    const response = await fetch("/api/companies/post-company", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(data as company),
     });
 
     if (response.ok) {

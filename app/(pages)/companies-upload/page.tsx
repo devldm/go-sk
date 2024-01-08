@@ -1,5 +1,5 @@
-import CompanyUploadForm from "../components/CompanyUploadForm/CompanyUploadForm";
-import Layout from "../components/Layout/Layout";
+import CompanyUploadForm from "../../components/CompanyUploadForm/CompanyUploadForm";
+import Layout from "../../components/Layout/Layout";
 
 const CompaniesUpload: React.FC = () => {
   return (

@@ -1,12 +1,12 @@
 "use client";
 
-import Layout from "../../components/Layout/Layout";
-import { getTimeSincePosting } from "../../../utils/getTimeSincePosting";
-import JobDetails from "../../components/JobDetails/JobDetails";
-import { Job } from "../../../types";
+import Layout from "../../../components/Layout/Layout";
+import { getTimeSincePosting } from "../../../../utils/getTimeSincePosting";
+import JobDetails from "../../../components/JobDetails/JobDetails";
+import { Job } from "../../../../types";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import Spinner from "../../components/Spinner/Spinner";
+import Spinner from "../../../components/Spinner/Spinner";
 
 const JobPage: React.FC = ({}) => {
   const [job, setJob] = useState({} as Job);
