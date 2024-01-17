@@ -25,7 +25,9 @@ export async function getCompany(id: string) {
 }
 
 export async function postCompany(prevState: any, formData: FormData) {
-  const formDataObj: Partial<company> = {};
+  const formDataObj: Partial<company> & {
+    [key: string]: any;
+  } = {};
 
   formData.forEach((value, key) => {
     // Exclude keys with special characters (e.g., '$ACTION_KEY')
@@ -33,6 +35,7 @@ export async function postCompany(prevState: any, formData: FormData) {
       formDataObj[key] = value;
     }
   });
+
   formDataObj.company_description = prevState.company_description;
   formDataObj.company_id = crypto.randomUUID();
 
@@ -40,6 +43,7 @@ export async function postCompany(prevState: any, formData: FormData) {
     const postData: company = await prisma.go_sk_companies.create({
       data: { ...formDataObj } as company,
     });
+
     revalidatePath("/");
     return {
       success: true,
@@ -50,7 +54,9 @@ export async function postCompany(prevState: any, formData: FormData) {
 }
 
 export async function postJob(prevState: any, formData: FormData) {
-  const formDataObj: Partial<Job> = {};
+  const formDataObj: Partial<Job> & {
+    [key: string]: any;
+  } = {};
 
   formData.forEach((value, key) => {
     // Exclude keys with special characters (e.g., '$ACTION_KEY')
@@ -59,11 +65,20 @@ export async function postJob(prevState: any, formData: FormData) {
     }
   });
   console.warn(prevState);
+
+  // Added check for formDataObj.salary_max
+  if (typeof formDataObj.salary_max === "string") {
+    formDataObj.salary_max = parseInt(formDataObj.salary_max);
+  }
+
+  // Added check for formDataObj.salary_min
+  if (typeof formDataObj.salary_min === "string") {
+    formDataObj.salary_min = parseInt(formDataObj.salary_min);
+  }
+
   formDataObj.job_id = crypto.randomUUID();
   formDataObj.posted_datetime = new Date().toISOString();
   formDataObj.job_description = prevState.job_description;
-  formDataObj.salary_max = parseInt(formDataObj.salary_max);
-  formDataObj.salary_min = parseInt(formDataObj.salary_min);
 
   try {
     const postData: Job = await prisma.go_sk_jobs.create({
