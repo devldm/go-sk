@@ -57,7 +57,7 @@ export default function JobUploadForm() {
     <div>
       <form
         action={formAction}
-        className="flex flex-col gap-2 m-auto items-center caret-white text-xl"
+        className="flex flex-col gap-2 m-auto items-center caret-black dark:caret-white text-xl"
       >
         <FormInput
           type={"text"}
@@ -91,7 +91,7 @@ export default function JobUploadForm() {
         />
         <label htmlFor="role_type">Role type:</label>
         <select
-          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
+          className="mb-2 dark:bg-[#222] p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
           id="role_type"
           name="role_type"
         >
@@ -105,7 +105,7 @@ export default function JobUploadForm() {
         </select>
         <label htmlFor="experience_level">Experience level:</label>
         <select
-          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
+          className="mb-2 dark:bg-[#222] p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
           id="experience_level"
           name="experience_level"
         >
@@ -118,7 +118,7 @@ export default function JobUploadForm() {
         </select>
         <label htmlFor="remote_level">Remote, Hybrid or On-site:</label>
         <select
-          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
+          className="mb-2 p-2 dark:bg-[#222] text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
           id="remote_level"
           name="remote_level"
         >
@@ -133,7 +133,7 @@ export default function JobUploadForm() {
           <div className="">
             <label htmlFor="currency">Currency:</label>
             <select
-              className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
+              className="mb-2 p-2 dark:bg-[#222] text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
               id="currency"
               name="currency"
             >

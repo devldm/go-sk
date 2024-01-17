@@ -36,7 +36,7 @@ const Jobs: React.FC = async () => {
                 Work for a South Korean company? <br></br>Advertise your roles
                 by submitting below!
               </p>
-              <Link href="/jobUpload">
+              <Link href="/job-upload">
                 <Button buttonText="Upload a role" />
               </Link>
             </div>

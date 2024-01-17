@@ -4,8 +4,8 @@ import DetailsPill from "../detailsPill/DetailsPill";
 
 export default function JobPreview({ jobProps }: { jobProps: Job }) {
   return (
-    <div className="border-2 border-[#3f3e3e] rounded-xl hover:shadow-[#3758f9] hover:border-[#3758f9]">
-      <div className="p-3 bg-[#30363d67]">
+    <div className="border-2 dark:border-[#3f3e3e] border-slate-500 rounded-xl hover:shadow-[#3758f9] hover:border-[#3758f9]">
+      <div className="p-3 bg-[#b7bcc267] dark:bg-[#222]">
         <div className="">
           <h1 className="text-2xl">{jobProps?.job_title}</h1>
           <p className="italic">{jobProps?.location}</p>

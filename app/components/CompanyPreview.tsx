@@ -6,7 +6,7 @@ export default function CompanyPreview({
   companyProps: company;
 }) {
   return (
-    <div className="bg-[#30363d67] rounded-xl h-full hover:shadow-[#3758f9] min-w-min p-4 border-2 border-[#3f3e3e] hover:border-[#3758f9] flex-col justify-between flex">
+    <div className="dark:bg-[#222] bg-[#e6e9ec67] dark:border-[#3f3e3e] rounded-xl h-full hover:shadow-[#3758f9] min-w-min p-4 border-2 border-slate-500 hover:border-[#3758f9] flex-col justify-between flex ">
       <h1 className="text-2xl">{companyProps?.company_name}</h1>
       <p className="italic">{companyProps?.company_address}</p>
       <p className="italic">{companyProps?.company_industry}</p>

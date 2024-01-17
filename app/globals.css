@@ -20,26 +20,3 @@ a {
   box-sizing: border-box;
   width: 100%;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-
-  body {
-    color: #f0f6fc;
-    background: #121212;
-    /*background: black;*/
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  html {
-    color-scheme: light;
-  }
-
-  body {
-    color: rgb(0, 0, 0);
-    background-color: #fff;
-  }
-}

@@ -11,10 +11,10 @@ export default function JobDetails({ job }: { job: Job }) {
     job.remote_level;
 
   return (
-    <div className="lg:fixed min-w-max max-w-[400px] ">
+    <div className="lg:fixed min-w-max lg:max-w-[400px] ">
       {validJobDetails && (
         <>
-          <div className="bg-[#222] p-4 rounded-xl mb-5 flex flex-col border-[#3f3e3e] border-2">
+          <div className="bg-[#b7bcc267] dark:bg-[#222] p-4 rounded-xl mb-5 flex flex-col dark:border-[#3f3e3e] border-slate-500 border-2">
             <h3 className="my-3 text-2xl font-bold">Job Details</h3>
             <hr className="mb-2" />
             <div className={"flex gap-4 flex-col"}>

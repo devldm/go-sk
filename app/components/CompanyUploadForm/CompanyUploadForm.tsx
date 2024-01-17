@@ -52,7 +52,7 @@ export default function CompanyUploadForm() {
     <div>
       <form
         action={formAction}
-        className="flex flex-col gap-2 m-auto items-center caret-white text-xl"
+        className="flex flex-col gap-2 m-auto items-center caret-black dark:caret-white text-xl"
       >
         <FormInput
           type={"text"}
@@ -103,7 +103,7 @@ export default function CompanyUploadForm() {
           Korean level:
         </label>
         <select
-          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
+          className="mb-2 p-2 text-xl  dark:bg-[#222] rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
           id="korean_level_required"
           required
           name="korean_level_required"
@@ -123,7 +123,7 @@ export default function CompanyUploadForm() {
           Business language:
         </label>
         <select
-          className="mb-2 p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
+          className="mb-2 p-2 text-xl rounded-lg border-2 dark:bg-[#222] border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
           id="business_language"
           name="business_language"
           required

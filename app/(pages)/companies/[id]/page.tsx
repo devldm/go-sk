@@ -11,8 +11,8 @@ export default async function CompanyPage({
   const company = await getCompany(params.id);
 
   return (
-    <div className="flex md:gap-12 justify-center m-auto flex-col p-5 lg:w-[60%] lg:flex-row pt-10">
-      <div className="mb-6 flex-col flex max-w-max">
+    <div className="flex md:gap-12 justify-center m-auto flex-col p-5 lg:w-[60%] lg:min-w-[60%] lg:flex-row pt-10">
+      <div className="mb-6 flex-col flex">
         <h1 className="md:mt-4 text-6xl font-bold ">{company.company_name}</h1>
         <p className="">{company.company_industry}</p>
         <div className="flex items-center justify-between text-lg mt-2 w-full">

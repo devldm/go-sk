@@ -35,7 +35,7 @@ export default async function Companies() {
               <h2 className="text-3xl">
                 No companies have been submitted yet. Come back later
               </h2>
-              <Link href="/companiesUpload">
+              <Link href="/companies-upload">
                 <Button buttonText="Upload a company" />
               </Link>
             </div>
