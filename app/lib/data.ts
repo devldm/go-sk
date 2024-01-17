@@ -64,7 +64,6 @@ export async function postJob(prevState: any, formData: FormData) {
       formDataObj[key] = value;
     }
   });
-  console.warn(prevState);
 
   // Added check for formDataObj.salary_max
   if (typeof formDataObj.salary_max === "string") {
@@ -102,7 +101,6 @@ export async function getJobs() {
 }
 
 export async function getJob(id: string) {
-  console.log(id);
   const job: Job | null = await prisma.go_sk_jobs.findUnique({
     where: {
       job_id: id,
