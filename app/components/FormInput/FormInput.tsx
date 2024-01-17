@@ -5,7 +5,7 @@ interface FormInputProps {
   labelText: string;
   required: boolean;
   id: string;
-  onChange: (e: any) => void;
+  onChange?: (e: any) => void;
 }
 
 export default function FormInput({

@@ -1,5 +1,8 @@
+"use server";
+
 import { Job, company } from "../../types";
 import prisma from "../../db";
+import { revalidatePath } from "next/cache";
 
 export async function getCompanies() {
   const companies: company[] = await prisma.go_sk_companies.findMany();
@@ -10,7 +13,6 @@ export async function getCompanies() {
 }
 
 export async function getCompany(id: string) {
-  console.log(id);
   const company: company | null = await prisma.go_sk_companies.findUnique({
     where: {
       company_id: id,
@@ -22,8 +24,58 @@ export async function getCompany(id: string) {
   return company;
 }
 
-export async function postCompany() {
-  
+export async function postCompany(prevState: any, formData: FormData) {
+  const formDataObj: Partial<company> = {};
+
+  formData.forEach((value, key) => {
+    // Exclude keys with special characters (e.g., '$ACTION_KEY')
+    if (!key.startsWith("$")) {
+      formDataObj[key] = value;
+    }
+  });
+  formDataObj.company_description = prevState.company_description;
+  formDataObj.company_id = crypto.randomUUID();
+
+  try {
+    const postData: company = await prisma.go_sk_companies.create({
+      data: { ...formDataObj } as company,
+    });
+    revalidatePath("/");
+    return {
+      success: true,
+    };
+  } catch (e) {
+    return { message: `Server Error: ${e}`, success: false };
+  }
+}
+
+export async function postJob(prevState: any, formData: FormData) {
+  const formDataObj: Partial<Job> = {};
+
+  formData.forEach((value, key) => {
+    // Exclude keys with special characters (e.g., '$ACTION_KEY')
+    if (!key.startsWith("$")) {
+      formDataObj[key] = value;
+    }
+  });
+  console.warn(prevState);
+  formDataObj.job_id = crypto.randomUUID();
+  formDataObj.posted_datetime = new Date().toISOString();
+  formDataObj.job_description = prevState.job_description;
+  formDataObj.salary_max = parseInt(formDataObj.salary_max);
+  formDataObj.salary_min = parseInt(formDataObj.salary_min);
+
+  try {
+    const postData: Job = await prisma.go_sk_jobs.create({
+      data: { ...formDataObj } as Job,
+    });
+    revalidatePath("/");
+    return {
+      success: true,
+    };
+  } catch (e) {
+    return { message: `Server Error: ${e}`, success: false };
+  }
 }
 
 export async function getJobs() {
