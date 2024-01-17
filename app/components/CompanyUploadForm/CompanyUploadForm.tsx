@@ -8,6 +8,7 @@ import { useFormState } from "react-dom";
 import { postCompany } from "../../lib/data";
 import DOMPurify from "dompurify";
 import dynamic from "next/dynamic";
+import FormSelect from "../FormSelect";
 
 export default function CompanyUploadForm() {
   const [state, formAction] = useFormState(postCompany, {});
@@ -96,45 +97,20 @@ export default function CompanyUploadForm() {
           required={false}
           id={"company_sns_url"}
         />
-        <label
-          htmlFor="korean_level_required"
-          className="after:content-['*'] after:ml-0.5 after:text-red-500"
-        >
-          Korean level:
-        </label>
-        <select
-          className="mb-2 p-2 text-xl  dark:bg-[#222] rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
-          id="korean_level_required"
-          required
-          name="korean_level_required"
-        >
-          <option value="" disabled>
-            --Korean level required--
-          </option>
-          <option value="None">None</option>
-          <option value="Basic">Basic</option>
-          <option value="Intermediate">Intermediate</option>
-          <option value="Advanced">Advanced</option>
-        </select>
-        <label
+        <FormSelect
+          label={"Korean level:"}
+          htmlFor={"korean_level_required"}
+          id={"korean_level_required"}
+          placeholderOption={"--Korean level required--"}
+          selectOptions={["None", "Basic", "Intermediate", "Advanced"]}
+        />
+        <FormSelect
+          label="Business language:"
           htmlFor="business_language"
-          className="after:content-['*'] after:ml-0.5 after:text-red-500"
-        >
-          Business language:
-        </label>
-        <select
-          className="mb-2 p-2 text-xl rounded-lg border-2 dark:bg-[#222] border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
-          id="business_language"
-          name="business_language"
-          required
-        >
-          <option value="" disabled>
-            --Business language--
-          </option>
-          <option value="English">English</option>
-          <option value="Korean">Korean</option>
-          <option value="Mixed">Mixed</option>
-        </select>
+          id={"business_language"}
+          placeholderOption="--Business language--"
+          selectOptions={["English", "Korean", "Mixed"]}
+        />
         <label htmlFor={"company_description"}>Description:</label>
         <ReactQuill
           value={htmlContent}

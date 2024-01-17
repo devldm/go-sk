@@ -12,6 +12,7 @@ import "react-quill/dist/quill.snow.css";
 import DOMPurify from "dompurify";
 import { useState } from "react";
 import JobPreview from "../JobPreview/JobPreview";
+import FormSelect from "../FormSelect";
 
 export default function JobUploadForm() {
   const [state, formAction] = useFormState(postJob, {});
@@ -89,62 +90,37 @@ export default function JobUploadForm() {
           required={true}
           id={"linkedin_url"}
         />
-        <label htmlFor="role_type">Role type:</label>
-        <select
-          className="mb-2 dark:bg-[#222] p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
-          id="role_type"
-          name="role_type"
-        >
-          <option value="" disabled>
-            --Type of role--
-          </option>
-          <option value="Internship">Internship</option>
-          <option value="Contract">Contract</option>
-          <option value="Part time">Part time</option>
-          <option value="Full time">Full time</option>
-        </select>
-        <label htmlFor="experience_level">Experience level:</label>
-        <select
-          className="mb-2 dark:bg-[#222] p-2 text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
-          id="experience_level"
-          name="experience_level"
-        >
-          <option value="" disabled>
-            --Experience expected--
-          </option>
-          <option value="Entry level">Entry level</option>
-          <option value="Mid level">Mid level</option>
-          <option value="Senior level">Senior level</option>
-        </select>
-        <label htmlFor="remote_level">Remote, Hybrid or On-site:</label>
-        <select
-          className="mb-2 p-2 dark:bg-[#222] text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
-          id="remote_level"
-          name="remote_level"
-        >
-          <option value="" disabled>
-            --Remote, Hybrid or On-site--
-          </option>
-          <option value="Remote">Remote</option>
-          <option value="Hybrid">Hybrid</option>
-          <option value="On-Site">On-Site</option>
-        </select>
+        <FormSelect
+          label={"Role type:"}
+          htmlFor={"role_type"}
+          id={"role_type"}
+          placeholderOption={"--Type of role--"}
+          selectOptions={["Internship", "Contract", "Part time", "Full time"]}
+        />
+        <FormSelect
+          label={"Experience level:"}
+          htmlFor={"experience_level"}
+          id={"experience_level"}
+          placeholderOption={"--Experience expected--"}
+          selectOptions={["Entry level", "Mid level", "Senior level"]}
+        />
+        <FormSelect
+          label={"Remote, Hybrid or On-site:"}
+          htmlFor={"remote_level"}
+          id={"remote_level"}
+          placeholderOption={"--Remote, Hybrid or On-site--"}
+          selectOptions={["Remote", "Hybrid", "On-site"]}
+        />
+
         <div className="flex flex-col lg:gap-3 lg:flex-row items-center">
-          <div className="">
-            <label htmlFor="currency">Currency:</label>
-            <select
-              className="mb-2 p-2 dark:bg-[#222] text-xl rounded-lg border-2 border-[#121212] focus:outline-none focus:border-[#3758f9] focus:ring-1 focus:ring-[#3758f9]"
-              id="currency"
-              name="currency"
-            >
-              <option value="" disabled>
-                Currency:
-              </option>
-              <option value="KRW">KRW</option>
-              <option value="USD">USD</option>
-              <option value="GBP">GBP</option>
-              <option value="EUR">EUR</option>
-            </select>
+          <div>
+            <FormSelect
+              label={"Currency:"}
+              htmlFor={"currency"}
+              id={"currency"}
+              placeholderOption={"Currency:"}
+              selectOptions={["KRW", "USD", "GBP", "EUR", "JPY"]}
+            />
           </div>
           <div className="flex flex-col justify-between">
             <FormInput
