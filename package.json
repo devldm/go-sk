@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:e2e": "yarn playwright test",
+    "test:e2e:ui": "yarn playwright test --ui",
+    "test:e2e:report": "yarn playwright show-report"
   },
   "dependencies": {
     "@prisma/client": "5.4.2",
@@ -20,6 +23,7 @@
     "react-quill": "^2.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.41.1",
     "@types/node": "20.8.5",
     "@types/react": "18.2.28",
     "@types/react-dom": "18.2.13",
