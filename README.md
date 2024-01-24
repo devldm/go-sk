@@ -37,6 +37,15 @@ This website it hosted here:
 
 **supabase** - I believe supabase offers the best UX for devs building fully functioned and scale-able backends. Giving us actions to a database, edge functions, auth and much more.
 
+## Screenshots
+
+![Screenshot 2024-01-24 at 20-29-47 GO-SK](https://github.com/devldm/go-sk/assets/39243060/72d3c4d7-9579-468d-94d9-cdd8c95deec9)
+
+![Screenshot 2024-01-24 at 20-32-13 GO-SK](https://github.com/devldm/go-sk/assets/39243060/9b0f4d64-a1ec-4ac5-afe0-a20b41480792)
+
+![Screenshot 2024-01-24 at 20-33-26 GO-SK](https://github.com/devldm/go-sk/assets/39243060/07b77497-c126-467a-8171-7f578727f555)
+
+
 ## App Repo
 
 You can find the app version [here](https://www.github.com/devldm/go-sk-app)
